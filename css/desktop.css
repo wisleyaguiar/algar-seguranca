@@ -1,0 +1,15 @@
+.menuPaginas .mPaginas .linkMP li { margin-right:0; min-width:110px; }
+.menuPaginas .mPaginas .linkMP li.rural { min-width:80px; }
+.menuPaginas .mPaginas .linkMP li.pmes { min-width:80px; }
+.menuPaginas .mPaginas .linkMP li a { font-size:1.1em; }
+.menuPaginas .buscaSite .grupo-form input.input-busca { font-size:1.2em; margin-top:3px; }
+.menuPaginas .buscaSite { width:230px; }
+.menuPaginas .buscaSite .grupo-form { width:147px; }
+.internas .menuPaginas .mPaginas .linkMP li a { font-size:1.2em; color:#3b68a2; text-decoration:none; display:inline-block; background:url(../icones/arrow-seta-baixo.png) no-repeat right center; padding-right:10px; transition:all ease 0.5s; text-shadow:0 1px 0 #000; }
+.popup-contato { display:none; }
+.img-destaque {width: 342px; height: 100%; position: absolute; left: 640px; bottom: 0!important; }
+.img-destaque img { display:block; margin:0 auto; width:100%; height:auto; }
+
+#agentecuida .coluna-left { width:auto; left:inherit; }
+#agentecuida .coluna-right { width:auto; right:inherit; }
+#agentecuida .contentTextos { margin-left:43px; width:auto; max-width:none; margin-right:50px; }

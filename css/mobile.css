@@ -1,0 +1,199 @@
+.header { background:#3b68a2; width:100%; position:relative; height:80px; overflow:inherit; }
+.header .logo { padding-top:10px; text-align:center; padding-bottom:0; border-bottom:0; margin-right:0px; }
+.header .logo img { width:140px; height:auto; }
+
+.maiMenu .menuMobile { display:block; background:url(../images/icone-abre-menu.png) no-repeat 0 0; width:29px; height:27px; overflow:hidden; text-indent:-99999px; }
+.maiMenu .menuMobile.ativado { background:url(../images/icone-abre-menu-2.png) no-repeat 0 0; }
+.contatoMobile { display:block; background:url(../images/icone-telefone-mobile.png) no-repeat 0 0; width:41px; height:39px; overflow:hidden; text-indent:-999999px; position:absolute; top:20px; right:10px; }
+
+.maiMenu { position:absolute; top:27px; left:25px; z-index:100000;}
+.linksMenu { display:none; background-color:#355d91; border-radius:20px; overflow:hidden; margin-top: 5px; margin-left: -19px; }
+.linksMenu li { display:block; height:70px; border-bottom:2px groove #6c8eb9; margin-right:2px; text-align:left; font-size:0.9em; overflow:hidden; }
+.linksMenu li:nth-last-child(1) {border-bottom:0; display:none; }
+.linksMenu li:nth-last-child(2) {border-bottom:0; }
+.linksMenu li a { display:block; border-left:0; padding-left:10px; line-height:5em; color:#FFF; text-decoration:none; font-weight:normal; transition:all ease 0.5s; width:210px; background-repeat:no-repeat; background-position:90% 50%; }
+.linksMenu li a:hover {border-left:10px solid #61abeb; padding-left:0; font-weight:bold; background-color:#355d91; }
+.linksMenu li.patrimonial a { background-image:url(../images/icone-patrimonial-menu.png); }
+.linksMenu li.eletronica a { background-image:url(../images/icone-eletronica-menu.png); }
+.linksMenu li.docecm a { background-image:url(../images/icone-documentos-menu.png); }
+.linksMenu li.monitoramento a { background-image:url(../images/icone-monitoramento-menu.png); }
+
+.container { width:auto; margin-left:0; position:relative; }
+
+.menuGrupoAlgar { display:none; }
+
+.menuPaginas {border-bottom:2px groove #85bae9; width:100%; overflow:hidden; padding-bottom:0px; height:115px; background:#3b68a2; position:absolute; bottom:0; z-index:20000; }
+
+.menuPaginas .mPaginas { float:none; padding-top:0; padding-left:0; }
+.menuPaginas .mPaginas .linkMP li { display:inline-block; margin-right:0; text-align:center; padding-top:25px;}
+
+.menuPaginas .mPaginas .linkMP li a { font-size:1.3em; color:#FFF; text-decoration:none; display:block; background:none; padding-right:0; padding-top:50px; }
+.internas .menuPaginas .mPaginas .linkMP li a { font-size:1.3em; color:#FFF; text-decoration:none; display:block; background:none; padding-right:0; padding-top:50px; }
+.internas .menuPaginas .mPaginas .linkMP li a:hover, .internas .menuPaginas .mPaginas .linkMP li.ativado a, .internas .menuPaginas .mPaginas .linkMP li.current-menu-item a { color:#f1c830; }
+
+.menuPaginas .mPaginas .linkMP li.pmes a { background:url(../images/icone-pme.png) no-repeat center top; }
+.menuPaginas .mPaginas .linkMP li.pmes a:hover, .menuPaginas .mPaginas .linkMP li.pmes.ativado a, .menuPaginas .mPaginas .linkMP li.pmes.current-menu-item a { background:url(../images/icone-pme-hover.png) no-repeat center top; }
+
+.menuPaginas .mPaginas .linkMP li.empresa a { background:url(../images/icone-empresa.png) no-repeat center top; }
+.menuPaginas .mPaginas .linkMP li.empresa a:hover, .menuPaginas .mPaginas .linkMP li.empresa.ativado a, .menuPaginas .mPaginas .linkMP li.empresa.current-menu-item a { background:url(../images/icone-empresa-hover.png) no-repeat center top; }
+
+.menuPaginas .mPaginas .linkMP li.residencial a { background:url(../images/icone-residencial.png) no-repeat center top; }
+.menuPaginas .mPaginas .linkMP li.residencial a:hover, .menuPaginas .mPaginas .linkMP li.residencial.ativado a, .menuPaginas .mPaginas .linkMP li.residencial.current-menu-item a { background:url(../images/icone-residencial-hover.png) no-repeat center top; }
+
+.menuPaginas .mPaginas .linkMP li.industrial a { background:url(../images/icone-industrial.png) no-repeat center top; }
+.menuPaginas .mPaginas .linkMP li.industrial a:hover, .menuPaginas .mPaginas .linkMP li.industrial.ativado a, .menuPaginas .mPaginas .linkMP li.industrial.current-menu-item a { background:url(../images/icone-industrial-hover.png) no-repeat center top; }
+
+.menuPaginas .mPaginas .linkMP li.rural a { background:url(../images/icone-rural.png) no-repeat center top; }
+.menuPaginas .mPaginas .linkMP li.rural a:hover, .menuPaginas .mPaginas .linkMP li.rural.ativado a, .menuPaginas .mPaginas .linkMP li.rural.current-menu-item a { background:url(../images/icone-rural-hover.png) no-repeat center top; }
+
+.menuPaginas .mPaginas .linkMP li.condominios a { background:url(../images/icone-condominio.png) no-repeat center top; }
+.menuPaginas .mPaginas .linkMP li.condominios a:hover, .menuPaginas .mPaginas .linkMP li.condominios.ativado a, .menuPaginas .mPaginas .linkMP li.condominios.current-menu-item a { background:url(../images/icone-condominio-hover.png) no-repeat center top; }
+
+.menuPaginas .buscaSite { display:none; }
+
+.mainContent { width:100%; position:relative; padding-bottom:117px; height:272px;}
+@media (min-width: 768px) and (min-height: 1024px) {
+	.mainContent { height:727px; }
+}
+@media (min-width: 600px) and (min-height: 1024px) {
+	.mainContent { height:727px; }
+}
+@media (min-width: 604px) and (min-height: 966px) {
+	.mainContent { height:690px; }
+}
+.internas .mainContent { width:100%; position:relative; padding-bottom:117px; min-height:329px; overflow:hidden; height:auto;}
+
+span.no-mobile {display:none; }
+p.no-mobile {display:none; }
+
+/* Slider Parallax */
+.caption-slide { width:auto; height:auto; color:#FFF; position:relative; left:0; top:0; padding:30px; }
+.caption-slide h2 { font-size:1.3em; font-weight:bold; margin-bottom:20px; }
+.caption-slide p { line-height:150%; padding-bottom:10px; font-size:0.9em; }
+a.link-slide {display:block; background:url(../images/bullet-slider-paralax.png) no-repeat 0 0; width:20px; height:21px; overflow:hidden; text-indent:-999999px; }
+
+/* Footer */
+.footer { width:100%; background-color:#3b68a2; margin:0; height:99px; position:inherit; right:0; bottom:0; display:block;}
+.footer .logoRodape {width:140px; margin:0 auto; padding-top:20px;}
+.footer .logoRodape img {width:140px; height:auto; }
+
+/* Páginas Internas */
+.contentTextos { margin-left:30px; margin-top:30px; margin-right:30px; max-width:100%; height:auto; min-height:100%;}
+.contentTextos h2 { color:#3b68a2; font-weight:bold; font-size:2em; margin-bottom:10px; }
+.contentTextos p { color:#3b68a2; font-size:1.1em; line-height:150%; padding-bottom:15px; }
+.contentTextos blockquote { color:#3b68a2; font-style:italic; font-size:1.3em; margin-bottom:30px; }
+
+.listSegmento { display:none; }
+
+.listSegmentoMobile { display:block; margin-bottom:15px; border-top:2px groove #6c8eb9; margin:0 -30px;}
+.listSegmentoMobile li { display:block; font-size:0.9em; text-align:center; color:#FFF; border-bottom:2px groove #6c8eb9; }
+.listSegmentoMobile li a { display:block; color:#FFF; text-decoration:none; padding-top:0; text-align:center; min-width:38px; background-position:20% 50%; background-repeat:no-repeat; background-size:38px; height:48px; overflow:hidden; background-color:#3b68a2; line-height:300%; }
+.listSegmentoMobile li.icon-eletronica a { background-image:url(../images/icone-interna-eletronica.png); }
+.listSegmentoMobile li.icon-monitoramento a { background-image:url(../images/icone-interna-monitoramento.png); }
+.listSegmentoMobile li.icon-documental a { background-image:url(../images/icone-interna-documental.png); }
+.listSegmentoMobile li.icon-patrimonial a { background-image:url(../images/icone-interna-patrimonial.png); }
+
+.img-destaque { width: 50%;
+height: auto;
+left: 0;
+position: relative;
+text-align: center;
+margin: 0 auto;
+/* padding: 0 30%; */}
+.img-destaque img {width:90%; height:auto; display:block; }
+#patrimonial .img-destaque, #docecm .img-destaque, #eletronica .img-destaque, #monitoramento .img-destaque { display:none; }
+
+.popup-contato { display:none; }
+
+/* Página Agente Cuida */
+.coluna-left { width:100%; float:none; }
+.coluna-right { width:100%; float:none; }
+
+.coluna-right .contentTextos { margin-left:30px; max-width:683px; }
+
+.mapa-onde-estamos { display:none; }
+
+.lista-onde-estamos { display:block; border-bottom:2px groove #6c8eb9; }
+.lista-onde-estamos h3 { background:url(../images/cursor-lista-mobile-fechado.png) no-repeat 90% 50% #3b68a2; color:#FFF; font-weight:bold; text-transform:uppercase; padding:20px 30px; font-size:1.3em; border-top:2px groove #6c8eb9; cursor:pointer; }
+.lista-onde-estamos h3.ativado { background:url(../images/cursor-lista-mobile-aberto.png) no-repeat 90% 50%; color:#000; }
+.lista-onde-estamos div { padding:20px 30px; display:none; }
+.lista-onde-estamos div p { margin-bottom:15px; }
+.lista-onde-estamos div p span { text-decoration:underline; }
+
+/* Internas Serviços */
+.icon-mobile { display:block; text-align:center; padding-bottom:20px; }
+
+/* Lista de Soluções */
+.listaSolucoes { margin:30px 0; /*border-top:2px groove #557cae;*/ }
+.listaSolucoes li { display:block; width:100%; margin-right:0; height:auto; }
+.listaSolucoes li a { display:block; font-size:0.98em; text-decoration:none; color:#3b68a2; text-align:left; position:relative; padding-top:15px; height:45px; text-transform:uppercase; padding-left:72px; padding-right:38px; /*border-bottom:2px groove #557cae;*/ border-bottom:2px solid #3b68a2; cursor:pointer; }
+@media (min-width: 360px) {
+	.listaSolucoes li a { padding-left:100px; }
+}
+.listaSolucoes li .toltip { display:none; position:relative; background:inherit; border-radius:0; padding:20px; top: inherit; right: inherit; width:auto; z-index:10000; }
+.listaSolucoes li .toltip .pointer-toltip { display:none;}
+.listaSolucoes li .toltip p { color:#47719d; text-align:left; font-size:1em; margin:0; padding:0; }
+.listaSolucoes li:hover .toltip { display:none; }
+
+.listaSolucoes li.ativado a { display:block; font-size:0.98em; text-decoration:none; color:#47719d; text-align:left; position:relative; padding-top:15px; height:45px; text-transform:uppercase; padding-left:72px; padding-right:38px; border-bottom:0; }
+
+.listaSolucoes li a.cpi { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%, url(../icones/icone-cpi.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.cpi { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-cpi.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.vpr { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%, url(../icones/icone-vpr.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.vpr { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-vpr.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.cftvip { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-cftvip-m.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.cftvip { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-cftvip-m.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.cda { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-ca.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.cda { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-ca.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.bp { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-bp-m.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.bp { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-bp-m.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.sam { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-sam-m.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.sam { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-sam-m.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.termog { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../images/icon-termografia-mobile.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.termog { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%,url(../images/icon-termografia-mobile.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.consu { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-consultoria.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.consu { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-consultoria.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.audi { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-auditoria.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.audi { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-auditoria.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.digi { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-digitalizacao.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.digi { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-digitalizacao.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.gere { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-gerenciamento.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.gere { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-gerenciamento.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.orga { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-organizacao.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.orga { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-organizacao.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.ttd { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-tabela-ttd.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.ttd { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-tabela-ttd.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.treina { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-treinamento.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.treina { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-treinamento.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.monimg { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-mdei.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.monimg { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-mdei.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.monialar { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-mdea.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.monialar { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-mdea.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.manuse { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-mse.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.manuse { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-mse.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.monigprs { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-moni-gprs-ip.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.monigprs { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-moni-gprs-ip.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.consurela { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-cro.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.consurela { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-cro.png) no-repeat 5% 50% transparent; }
+
+.area-cliente { display:block; margin:0 -30px; }
+.area-cliente a { display:block; font-size:1.8em; font-weight:bold; text-decoration:none; color:#FFF; position:relative; padding-top:18px; height:42px; text-transform:uppercase; padding-left:0; padding-right:0; text-align:center; border-bottom:2px groove #679766; background:url(../images/cursor-lista-mobile-fechado.png) no-repeat 90% 50% #4f8c4d; }
+.area-cliente-desk { display:none; }

@@ -1,0 +1,193 @@
+/*
+Theme Name: Algar Segurança
+Theme URI: http://www.algarseguranca.com.br
+Author: TOBE PROPAGANDA EIRELI
+Author URI: http://www.tobe.ppg.br
+Description: Tema desenvolvido para o novo Portal da Algar Segurança.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: algarseguranca
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+html, body { height:100%; }
+body { background:#5ca3e2 url(images/bg.png) no-repeat center right; font-family:'dax', sans-serif; font-size:100%; overflow:hidden; }
+body.internas { background:#FFF; overflow:auto; }
+.page { position:relative; width:100%; height:auto; min-height:100%; }
+
+.header { background:url(images/bg-menu-lateral.png) repeat-y 0 0; width:253px; position:fixed; height:100%; overflow:hidden; z-index:10000; }
+.header .logo { padding-top:30px; text-align:center; padding-bottom:28px; border-bottom:2px groove #6c8eb9; margin-right:2px; }
+.maiMenu .menuMobile, .contatoMobile { display:none; }
+.linksMenu li { display:block; height:82px; border-bottom:2px groove #6c8eb9; margin-right:2px; text-align:center; font-size:1.3em; overflow:hidden; }
+.linksMenu li a { display:block; border-left:0; padding-left:10px; line-height:4em; color:#FFF; text-decoration:none; font-weight:normal; transition:all ease 0.5s; }
+.linksMenu li a:hover, .linksMenu li.ativado a, .linksMenu li.current-menu-item a {border-left:10px solid #61abeb; padding-left:0; font-weight:bold; background-color:#355d91; }
+
+.container { width:auto; margin-left:253px; height:auto; min-height:100%; }
+
+.menuGrupoAlgar { width:100%; overflow:hidden; padding:30px 0; }
+.menuGrupoAlgar .linksMenuGA { display:block; float:right; margin-right:50px; }
+.menuGrupoAlgar .linksMenuGA li { display:inline-block; background:url(images/icone-li-top-right.png) no-repeat left center; padding-left:14px; margin-left:18px; transition:all ease 0.5s;}
+.internas .menuGrupoAlgar .linksMenuGA li { display:inline-block; background:url(icones/arrow-seta-lado.png) no-repeat left center; padding-left:14px; margin-left:18px; transition:all ease 0.5s;}
+.menuGrupoAlgar .linksMenuGA li a { color:#FFF; text-decoration:none; font-weight:bold; font-style:italic; text-shadow:0 1px 0 #000; font-size:0.9em; text-transform:uppercase; transition:all ease 0.5s;}
+.internas .menuGrupoAlgar .linksMenuGA li a { color:#3b68a2; text-decoration:none; font-weight:bold; font-style:italic; text-shadow:0 1px 0 #000; font-size:0.9em; text-transform:uppercase; transition:all ease 0.5s;}
+.menuGrupoAlgar .linksMenuGA li a:hover { color:#f1c931; }
+.internas .menuGrupoAlgar .linksMenuGA li a:hover { color:#61abeb; }
+.menuGrupoAlgar .linksMenuGA li:hover { }
+
+.menuPaginas {border-bottom:2px groove #85bae9; width:100%; overflow:hidden; padding-bottom:6px; }
+.internas .menuPaginas {border-color:#FFF; }
+
+.menuPaginas .mPaginas { float:left; padding-top:15px; padding-left:30px; }
+.menuPaginas .mPaginas .linkMP li { display:inline-block; margin-right:30px; min-width:130px; text-align:center;}
+
+.menuPaginas .mPaginas .linkMP li a { font-size:1.3em; color:#FFF; text-decoration:none; display:inline-block; background:url(images/icon-baixo-menu.png) no-repeat right center; padding-right:10px; transition:all ease 0.5s; text-shadow:0 1px 0 #000; }
+.internas .menuPaginas .mPaginas .linkMP li a { font-size:1.3em; color:#3b68a2; text-decoration:none; display:inline-block; background:url(icones/arrow-seta-baixo.png) no-repeat right center; padding-right:10px; transition:all ease 0.5s; text-shadow:0 1px 0 #000; }
+.menuPaginas .mPaginas .linkMP li a:hover, .menuPaginas .mPaginas .linkMP li.ativado a, .menuPaginas .mPaginas .linkMP li.current-menu-item a { color:#f1c830; font-weight:bold; }
+.internas .menuPaginas .mPaginas .linkMP li a:hover, .internas .menuPaginas .mPaginas .linkMP li.ativado a, .internas .menuPaginas .mPaginas .linkMP li.current-menu-item a { color:#61abeb; font-weight:bold; background:url(icones/arrow-seta-baixo-hover.png) no-repeat right center; }
+
+.menuPaginas .buscaSite { float:right; margin-right:50px; width:280px; }
+.menuPaginas .buscaSite .grupo-form label { display:none; }
+.menuPaginas .buscaSite { overflow:hidden; border:2px groove #85bae9; margin-bottom:8px; }
+.internas .menuPaginas .buscaSite {border-color:#FFF; }
+.menuPaginas .buscaSite .bt-busca { float:right; border-left:2px groove #85bae9; }
+.internas .menuPaginas .buscaSite .bt-busca { border-color:#FFF; }
+.menuPaginas .buscaSite .grupo-form { float:left; width: 210px; }
+.menuPaginas .buscaSite .bt-busca button.bt-buscar { background-color:transparent; background:url(images/icone-lupa-busca.png) no-repeat center; border:0; padding: 19px 31px; cursor:pointer; }
+.internas .menuPaginas .buscaSite .bt-busca button.bt-buscar { background-color:transparent; background:url(icones/icone-lupa-pesquisa.png) no-repeat center; border:0; padding: 19px 31px; cursor:pointer; }
+.menuPaginas .buscaSite .grupo-form input.input-busca { background:none; border:0; color:#FFF; text-shadow:0 1px 0 #000; font-size:1.5em; font-family:'dax', sans-serif; font-weight:normal; padding:5px 8px; width:100%; outline:none;}
+.internas .menuPaginas .buscaSite .grupo-form input.input-busca { background:none; border:0; color:#3b68a2; text-shadow:0 1px 0 #000; font-size:1.5em; font-family:'dax', sans-serif; font-weight:normal; padding:5px 8px; width:100%; outline:none;}
+
+.menuPaginas .buscaSite .grupo-form input.input-busca::-webkit-input-placeholder { color: #FFF;}
+.menuPaginas .buscaSite .grupo-form input.input-busca:-moz-placeholder { color: #FFF;}
+.menuPaginas .buscaSite .grupo-form input.input-busca::-moz-placeholder { color: #FFF;}
+.menuPaginas .buscaSite .grupo-form input.input-busca:-ms-input-placeholder { color: #FFF;}
+
+.internas .menuPaginas .buscaSite .grupo-form input.input-busca::-webkit-input-placeholder { color: #3b68a2;}
+.internas .menuPaginas .buscaSite .grupo-form input.input-busca:-moz-placeholder { color: #3b68a2;}
+.internas .menuPaginas .buscaSite .grupo-form input.input-busca::-moz-placeholder { color: #3b68a2;}
+.internas .menuPaginas .buscaSite .grupo-form input.input-busca:-ms-input-placeholder { color: #3b68a2;}
+
+.menuPaginas .menuPaginasResponsivo { display:none; }
+.menuPaginas .menuResponsivoContent { display:block; }
+
+.mainContent { width:100%; position:relative; height:auto; min-height:100%; }
+
+span.no-mobile {display:inline; }
+p.no-mobile {display:inline-block; }
+
+/* Slider Parallax */
+.mainContent .slider { width:100%; height:100%; }
+.mainContent .slider .slide .caption-slide { width:612px; color:#FFF; }
+.mainContent .slider .slide .caption-slide h2 { font-size:84px; font-weight:bold; margin-bottom:20px; }
+.mainContent .slider .slide .caption-slide p { line-height:130%!important; padding-bottom:10px; display:block; font-size:27px; font-style:italic; }
+.mainContent .slider .slide .caption-slide a.link-slide {display:block; background:url(images/bullet-slider-paralax.png) no-repeat 0 0; width:20px!important; height:21px!important; overflow:hidden; text-indent:-999999px; }
+
+/* Footer */
+.footer { position: fixed; right:50px; bottom:50px; z-index:10000; display:none; }
+
+/* Páginas Internas */
+.contentTextos { margin-left:65px; margin-top:62px; max-width:545px; height:auto; min-height:600px; }
+.contentTextos h2 { color:#61abeb; font-weight:bold; font-size:2.5em; margin-bottom:30px; }
+.contentTextos h3 { color:#61abeb; font-weight:bold; font-size:1.5em; margin-bottom:10px; }
+.contentTextos p { color:#3b68a2; font-size:1.1em; line-height:150%; padding-bottom:15px; }
+.contentTextos ul.lista { list-style:disc; padding-left:25px; color:#3b68a2; line-height:150%; margin-bottom:15px; }
+.contentTextos blockquote p { color:#3b68a2; font-style:italic; font-size:1.5em!important; margin-bottom:30px; padding-bottom:0!important; }
+
+.listSegmentoMobile { display:none; }
+
+.listSegmento { display:block; margin-bottom:35px; }
+.listSegmento li { display:inline-block; font-size:0.9em; text-align:center; color:#FFF; }
+.listSegmento li a { display:block; color:#61abeb; text-decoration:none; padding-top:82px; text-align:center; min-width:110px; background-position:top center; background-repeat:no-repeat; }
+.listSegmento li.icon-eletronica a { background-image:url(icones/icone-page-eletronica.png); }
+.listSegmento li.icon-monitoramento a { background-image:url(icones/icone-page-monitoramento.png); }
+.listSegmento li.icon-documental a { background-image:url(icones/icone-page-documental.png); }
+.listSegmento li.icon-patrimonial a { background-image:url(icones/icone-page-patrimonial.png); }
+
+.img-destaque { width:540px; height:auto; min-height:100%; position:absolute; left:640px; bottom:-50%; background-image:url(fotos/grafismo-fundo-imagem.png); background-position:50% 80px;; background-repeat:no-repeat; background-size:contain; }
+.img-destaque img { display:block; margin:0 auto; }
+#patrimonial .img-destaque { bottom:-35%; }
+#eletronica .img-destaque { bottom:-50%; }
+#monitoramento .img-destaque { bottom:-15%; }
+#docecm .img-destaque { bottom:0; }
+#pme .img-destaque { bottom:-40%; }
+
+@media (max-width: 1280px) {
+	#pme .img-destaque { bottom:0; }	
+}
+
+.popup-contato { position:absolute; background-color:#f1c930; border-radius:10px; width:325px; height:350px; right:50px; top:0; text-align:center; }
+.popup-contato a.bt-fechar-contato { background:url(images/bt-close.png) no-repeat 0 0; width:33px; height:33px; overflow:hidden; text-indent:-999999px; position:absolute; right:-15px; top:-15px; }
+.popup-contato .num-tel { background:url(images/icone-phone-internas.png) no-repeat 0 0; height:62px; padding-left:62px; padding-right:20px; color:#47719d; font-size:1.7em; margin-top:25px; margin-left:30px; margin-bottom:20px; }
+.popup-contato .num-tel span { font-size:1.48em; font-weight:bold; }
+.popup-contato .input-form-contato { width:266px; margin-bottom:10px; margin-left:15px; }
+.popup-contato .input-form-contato input.form-input-contato { border:1px solid #bc9d2a; font-size:1.25em; color:#7f7f7f; font-style:italic; font-family:'dax', sans-serif; width:auto; min-width:100%; padding:10px 13px; display:block; outline:none; }
+.popup-contato button.bt-receber-contato {border:1px solid #bc9d2a; background-color:#4d8953; color:#FFF; font-family:'dax', sans-serif; font-size:1.5em; border-radius:8px; padding:8px 22px; box-shadow:1px 1px 0 #FFF; cursor:pointer; }
+.popup-contato a.link-politica { color:#47719d; text-decoration:none; font-size:0.93em; display:inline-block; padding:6px 0; }
+
+/* Página Agente Cuida */
+.coluna-left { width:50%; float:left; }
+.coluna-right { width:50%; float:right; }
+
+.coluna-right .contentTextos { margin-left:0; max-width:683px; }
+
+.mapa-onde-estamos { background:url(icones/mapa-brasil-onde-estamos.png) no-repeat center; width:683px; height:651px; margin-top:40px; position:relative; }
+.mapa-onde-estamos .indicador-mapa { display:block; position:absolute; background:url(images/indicador-mapa.png) no-repeat 0 0; width:17px; height:19px; transition:all ease 0.5s; }
+.mapa-onde-estamos .indicador-mapa .box-infos-mapa { display:none; position:absolute; background:url(images/bg-toltip-mapa.png) no-repeat 0 0; width:325px; height:263px; top:-267px; left:-50px; transition:all ease 0.5s; }
+.mapa-onde-estamos .indicador-mapa .box-infos-mapa h2 { font-size:1.9em; color:#47719d; display:block; padding:30px 25px 10px; margin:0; }
+.mapa-onde-estamos .indicador-mapa .box-infos-mapa p { color:#47719d; padding:10px 25px 0; }
+.mapa-onde-estamos .indicador-mapa .box-infos-mapa p.telefone {font-weight:bold; }
+
+.mapa-onde-estamos .indicador-mapa:hover .box-infos-mapa {display:block; }
+.lista-onde-estamos { display:none; }
+
+/* Internas Serviços */
+.icon-mobile { display:none; }
+
+/* Lista de Soluções */
+.listaSolucoes { margin:40px 0; }
+.listaSolucoes li { display:inline-block; width:124px; margin-right:5px; position:relative; height:115px; }
+.listaSolucoes li a { display:block; font-size:0.90em; text-decoration:none; color:#61abeb; text-align:center; position:relative; background-position:top center; background-repeat:no-repeat; padding-top:55px; }
+.listaSolucoes li .toltip { display:none; position:absolute; background:#f4d449; border-radius:10px; padding:20px; top: -41px; right: -333px; width: 282px; z-index:10000; }
+.listaSolucoes li .toltip .pointer-toltip { position:absolute; background:url(images/pointer-toltip2.png) no-repeat 0 0; width:19px; height:25px; top:50%; margin-top:-12px; left:-18px; }
+.listaSolucoes li .toltip p { color:#47719d; text-align:left; font-size:1em; margin:0; padding:0; }
+.listaSolucoes li:hover .toltip { display:block; }
+
+.listaSolucoes li a.cpi { background-image:url(icones/icone-cpi.png); }
+.listaSolucoes li a.vpr { background-image:url(icones/icone-vpr.png); }
+
+.listaSolucoes li a.cftvip { background-image:url(icones/icone-cftvip.png); }
+.listaSolucoes li a.cda { background-image:url(icones/icone-ca.png); }
+.listaSolucoes li a.bp { background-image:url(icones/icone-bp.png); }
+.listaSolucoes li a.sam { background-image:url(icones/icone-sam.png); }
+.listaSolucoes li a.termog { background-image:url(images/icon-termografia.png); }
+
+.listaSolucoes li a.consu { background-image:url(icones/icone-consultoria.png); }
+.listaSolucoes li a.audi { background-image:url(icones/icone-auditoria.png); }
+.listaSolucoes li a.digi { background-image:url(icones/icone-digitalizacao.png); }
+.listaSolucoes li a.gere { background-image:url(icones/icone-gerenciamento.png); }
+.listaSolucoes li a.orga { background-image:url(icones/icone-organizacao.png); }
+.listaSolucoes li a.ttd { background-image:url(icones/icone-tabela-ttd.png); }
+.listaSolucoes li a.treina { background-image:url(icones/icone-treinamento.png); }
+
+.listaSolucoes li a.monimg { background-image:url(icones/icone-mdei.png); }
+.listaSolucoes li a.monialar { background-image:url(icones/icone-mdea.png); }
+.listaSolucoes li a.manuse { background-image:url(icones/icone-mse.png); }
+.listaSolucoes li a.monigprs { background-image:url(icones/icone-moni-gprs-ip.png); }
+.listaSolucoes li a.consurela { background-image:url(icones/icone-cro.png); }
+
+.area-cliente { display:none; }
+
+/* Formulário de Contato */
+.formContato { padding-bottom:25px; overflow:hidden;}
+.formContato p { font-weight:bold; color:#61abeb; }
+.form-grupo { margin-bottom:15px; }
+.form-grupo label { display:inline-block; width:100%; color:#3b68a2; }
+.form-grupo label.radio { display:inline-block; width:auto; margin-right:15px; cursor:pointer; color:#61abeb; }
+.form-grupo .form-campo, .form-grupo .form-campo2, .form-grupo .form-textarea {  border-radius: 5px;  background-color: #f7f7f8;  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.35);  width:100%;  height: 38px;  border:0;  outline:none;  font-size:20px; }
+.form-grupo .form-campo2 { width:50%; }
+.form-grupo .form-textarea { height:150px; resize:none; }
+.formContato button {  border-style: solid; border-width: 1px; border-color: rgb(31, 27, 26); border-radius: 5px; background-color: rgb(77, 137, 83); box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.004); width: 105px; height: 43px; color:#FFF; font-family:'dax', sans-serif; font-weight:bold; font-size:25px; cursor:pointer; float:right; }
