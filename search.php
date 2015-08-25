@@ -23,7 +23,7 @@
 					<?php if ( $search->have_posts() ) : ?>
 
                     <!-- pagination here -->
-                	<h2>Resultado da pesquisa</h2>
+                	<h2>Resultado da busca</h2>
                     <!-- the loop -->
                     <?php while ( $search->have_posts() ) : $search->the_post(); ?>
                         <p>&rsaquo; <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
