@@ -15,7 +15,7 @@ get_header(); ?>
             	
                 <?php the_content(); ?>
                 
-                <div class="area-cliente"><a href="#">ÁREA DO CLIENTE</a></div>
+                <div class="area-cliente"><a href="<?php echo get_option('url_area_cliente'); ?>">ÁREA DO CLIENTE</a></div>
                 
             </div>
             <div class="img-destaque">

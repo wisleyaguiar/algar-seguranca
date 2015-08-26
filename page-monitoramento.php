@@ -15,8 +15,8 @@ get_header(); ?>
             	
                 <?php the_content(); ?>
                  
-                <div class="area-cliente-desk"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bt-area-cliente.png" alt="Área do Cliente"></a></div>
-                <div class="area-cliente"><a href="#">ÁREA DO CLIENTE</a></div>
+                <div class="area-cliente-desk"><a href="<?php echo get_option('url_area_cliente'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bt-area-cliente.png" alt="Área do Cliente"></a></div>
+                <div class="area-cliente"><a href="<?php echo get_option('url_area_cliente'); ?>">ÁREA DO CLIENTE</a></div>
             </div>
             <div class="img-destaque">
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-monitoramento.png" alt="Monitoramento">

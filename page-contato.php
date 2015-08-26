@@ -60,7 +60,7 @@ get_header(); ?>
                         <button type="submit" name="enviar" id="enviar">Enviar</button>
                     </form>
                 </div>
-                <div class="area-cliente"><a href="#">ÁREA DO CLIENTE</a></div>
+                <div class="area-cliente"><a href="<?php echo get_option('url_area_cliente'); ?>">ÁREA DO CLIENTE</a></div>
             </div>
             <div class="img-destaque">
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-contato.png" alt="Entre em Contato">

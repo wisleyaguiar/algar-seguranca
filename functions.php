@@ -70,3 +70,39 @@ function item_shortcode( $atts , $content = null ) {
 	
 }
 add_shortcode( 'item', 'item_shortcode' );
+
+// Opções do Tema
+add_action('admin_menu', 'add_global_custom_options');
+function add_global_custom_options()
+{
+    add_options_page('Opções do Tema', 'Opções do Tema', 'manage_options', 'functions','global_custom_options');
+}
+
+function global_custom_options()
+{
+?>
+    <div class="wrap">
+        <h2>Página de Opções</h2>
+        <form method="post" action="options.php">
+            <?php wp_nonce_field('update-options') ?>
+            
+            <table class="form-table">
+              <tbody>
+                <tr>
+                  <th scope="row"><label for="url_area_cliente">URL Área do Cliente:</label></th>
+                  <td><input type="text" name="url_area_cliente" size="45" value="<?php echo get_option('url_area_cliente'); ?>" class="regular-text" /></td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="url_gestao_doc">URL Área Gestão de Documentos:</label></th>
+                  <td><input type="text" name="url_gestao_doc" size="45" value="<?php echo get_option('url_gestao_doc'); ?>" class="regular-text" /></td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <p class="submit"><input type="submit" name="Submit" value="Salvar alterações" class="button button-primary" /></p>
+            <input type="hidden" name="action" value="update" />
+            <input type="hidden" name="page_options" value="url_area_cliente,url_gestao_doc" />
+        </form>
+    </div>
+<?php
+}

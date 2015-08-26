@@ -30,13 +30,17 @@ body.internas { background:#FFF; overflow:auto; }
 
 .menuGrupoAlgar { width:100%; overflow:hidden; padding:30px 0; }
 .menuGrupoAlgar .linksMenuGA { display:block; float:right; margin-right:50px; }
-.menuGrupoAlgar .linksMenuGA li { display:inline-block; background:url(images/icone-li-top-right.png) no-repeat left center; padding-left:14px; margin-left:18px; transition:all ease 0.5s;}
+.menuGrupoAlgar .linksMenuGA li, .internas .menuGrupoAlgar .linksMenuGA li ul.sub-menu li { display:inline-block; background:url(images/icone-li-top-right.png) no-repeat left center; padding-left:14px; margin-left:18px; transition:all ease 0.5s;}
 .internas .menuGrupoAlgar .linksMenuGA li { display:inline-block; background:url(icones/arrow-seta-lado.png) no-repeat left center; padding-left:14px; margin-left:18px; transition:all ease 0.5s;}
-.menuGrupoAlgar .linksMenuGA li a { color:#FFF; text-decoration:none; font-weight:bold; font-style:italic; text-shadow:0 1px 0 #000; font-size:0.9em; text-transform:uppercase; transition:all ease 0.5s;}
+.menuGrupoAlgar .linksMenuGA li a, .internas .menuGrupoAlgar .linksMenuGA li ul.sub-menu li a { color:#FFF; text-decoration:none; font-weight:bold; font-style:italic; text-shadow:0 1px 0 #000; font-size:0.9em; text-transform:uppercase; transition:all ease 0.5s;}
 .internas .menuGrupoAlgar .linksMenuGA li a { color:#3b68a2; text-decoration:none; font-weight:bold; font-style:italic; text-shadow:0 1px 0 #000; font-size:0.9em; text-transform:uppercase; transition:all ease 0.5s;}
 .menuGrupoAlgar .linksMenuGA li a:hover { color:#f1c931; }
 .internas .menuGrupoAlgar .linksMenuGA li a:hover { color:#61abeb; }
 .menuGrupoAlgar .linksMenuGA li:hover { }
+/*submenu*/
+.menuGrupoAlgar .linksMenuGA li ul.sub-menu { display:none; position:absolute; background:#3b68a2; margin-left:-14px; }
+.menuGrupoAlgar .linksMenuGA li ul.sub-menu li, .internas .menuGrupoAlgar .linksMenuGA li ul.sub-menu li { display:block; margin:10px 5px; }
+.menuGrupoAlgar .linksMenuGA li:hover ul.sub-menu { display:block; }
 
 .menuPaginas {border-bottom:2px groove #85bae9; width:100%; overflow:hidden; padding-bottom:6px; }
 .internas .menuPaginas {border-color:#FFF; }

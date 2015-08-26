@@ -14,8 +14,9 @@ get_header(); ?>
             	<div class="icon-mobile"><img src="<?php echo get_stylesheet_directory_uri(); ?>/icones/icone-page-documental.png" width="58" height="59" alt="Patrimonial"></div>
             	
                 <?php the_content(); ?>
-                               
-                <div class="area-cliente"><a href="#">ÁREA DO CLIENTE</a></div>
+                
+                <div class="area-cliente-desk"><a href="<?php echo get_option('url_gestao_doc'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bt-area-cliente.png" alt="Área do Cliente"></a></div>         
+                <div class="area-cliente"><a href="<?php echo get_option('url_gestao_doc'); ?>">ÁREA DO CLIENTE</a></div>
             </div>
             <div class="img-destaque">
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-gestao-doc.png" alt="Gestão de Documentos">

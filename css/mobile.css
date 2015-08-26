@@ -81,17 +81,17 @@ a.link-slide {display:block; background:url(../images/bullet-slider-paralax.png)
 .contentTextos { margin-left:30px; margin-top:30px; margin-right:30px; max-width:100%; height:auto; min-height:100%;}
 .contentTextos h2 { color:#3b68a2; font-weight:bold; font-size:2em; margin-bottom:10px; }
 .contentTextos p { color:#3b68a2; font-size:1.1em; line-height:150%; padding-bottom:15px; }
-.contentTextos blockquote { color:#3b68a2; font-style:italic; font-size:1.3em; margin-bottom:30px; }
+.contentTextos blockquote p { color:#3b68a2; font-style:italic; font-size:1.3em!important; margin-bottom:15px; padding-bottom:0; line-height:normal; }
 
 .listSegmento { display:none; }
 
-.listSegmentoMobile { display:block; margin-bottom:15px; border-top:2px groove #6c8eb9; margin:0 -30px;}
-.listSegmentoMobile li { display:block; font-size:0.9em; text-align:center; color:#FFF; border-bottom:2px groove #6c8eb9; }
-.listSegmentoMobile li a { display:block; color:#FFF; text-decoration:none; padding-top:0; text-align:center; min-width:38px; background-position:20% 50%; background-repeat:no-repeat; background-size:38px; height:48px; overflow:hidden; background-color:#3b68a2; line-height:300%; }
-.listSegmentoMobile li.icon-eletronica a { background-image:url(../images/icone-interna-eletronica.png); }
-.listSegmentoMobile li.icon-monitoramento a { background-image:url(../images/icone-interna-monitoramento.png); }
-.listSegmentoMobile li.icon-documental a { background-image:url(../images/icone-interna-documental.png); }
-.listSegmentoMobile li.icon-patrimonial a { background-image:url(../images/icone-interna-patrimonial.png); }
+.listSegmentoMobile { display:block; margin-bottom:15px; margin:0 30px 30px; border-bottom:2px groove #6c8eb9; }
+.listSegmentoMobile li { display:block; font-size:0.9em; text-align:left; color:#3b68a2; border-top:2px groove #6c8eb9; background:url(../icones/arrow-seta-lado.png) no-repeat 95% 50%; }
+.listSegmentoMobile li a { display:block; color:#3b68a2; text-decoration:none; padding-top:0; text-align:left; min-width:38px; background-position:5% 50%; background-repeat:no-repeat; background-size:38px; height:48px; overflow:hidden; background-color:transparent; line-height:300%; padding-left:20%; }
+.listSegmentoMobile li.icon-eletronica a { background-image:url(../icones/icone-page-eletronica.png); }
+.listSegmentoMobile li.icon-monitoramento a { background-image:url(../icones/icone-page-monitoramento.png); }
+.listSegmentoMobile li.icon-documental a { background-image:url(../icones/icone-page-documental.png); }
+.listSegmentoMobile li.icon-patrimonial a { background-image:url(../icones/icone-page-patrimonial.png); }
 
 .img-destaque { width: 50%;
 height: auto;
@@ -113,10 +113,11 @@ margin: 0 auto;
 
 .mapa-onde-estamos { display:none; }
 
-.lista-onde-estamos { display:block; border-bottom:2px groove #6c8eb9; }
-.lista-onde-estamos h3 { background:url(../images/cursor-lista-mobile-fechado.png) no-repeat 90% 50% #3b68a2; color:#FFF; font-weight:bold; text-transform:uppercase; padding:20px 30px; font-size:1.3em; border-top:2px groove #6c8eb9; cursor:pointer; }
+.lista-onde-estamos { display:block; border-bottom:0; margin-bottom:40px; }
+.lista-onde-estamos h3 { background:url(../icones/arrow-seta-lado.png) no-repeat 90% 50% #FFF; color:#3b68a2; font-weight:bold; text-transform:uppercase; padding:20px 20px; font-size:1.3em; border-bottom:1px groove #6c8eb9; cursor:pointer; margin:0 9px; }
+.lista-onde-estamos h3:last-child { border-bottom:0; }
 .lista-onde-estamos h3.ativado { background:url(../images/cursor-lista-mobile-aberto.png) no-repeat 90% 50%; color:#000; }
-.lista-onde-estamos div { padding:20px 30px; display:none; }
+.lista-onde-estamos div { padding:20px 70px; display:none; }
 .lista-onde-estamos div p { margin-bottom:15px; }
 .lista-onde-estamos div p span { text-decoration:underline; }
 
