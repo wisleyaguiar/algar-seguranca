@@ -90,18 +90,22 @@ function global_custom_options()
               <tbody>
                 <tr>
                   <th scope="row"><label for="url_area_cliente">URL Área do Cliente:</label></th>
-                  <td><input type="text" name="url_area_cliente" size="45" value="<?php echo get_option('url_area_cliente'); ?>" class="regular-text" /></td>
+                  <td><input type="text" name="url_area_cliente" value="<?php echo get_option('url_area_cliente'); ?>" class="regular-text" /></td>
                 </tr>
                 <tr>
                   <th scope="row"><label for="url_gestao_doc">URL Área Gestão de Documentos:</label></th>
-                  <td><input type="text" name="url_gestao_doc" size="45" value="<?php echo get_option('url_gestao_doc'); ?>" class="regular-text" /></td>
+                  <td><input type="text" name="url_gestao_doc" value="<?php echo get_option('url_gestao_doc'); ?>" class="regular-text" /></td>
+                </tr>
+                <tr>
+                  <th scope="row"><label for="tel_box_contato">Nº Telefone Box Contato:</label></th>
+                  <td><input type="text" name="tel_box_contato" value="<?php echo get_option('tel_box_contato'); ?>" class="regular-text" /></td>
                 </tr>
               </tbody>
             </table>
             
             <p class="submit"><input type="submit" name="Submit" value="Salvar alterações" class="button button-primary" /></p>
             <input type="hidden" name="action" value="update" />
-            <input type="hidden" name="page_options" value="url_area_cliente,url_gestao_doc" />
+            <input type="hidden" name="page_options" value="url_area_cliente,url_gestao_doc,tel_box_contato" />
         </form>
     </div>
 <?php

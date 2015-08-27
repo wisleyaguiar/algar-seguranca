@@ -1,5 +1,6 @@
     	<!-- navegação do site páginas -->
     	<nav class="menuGrupoAlgar">
+        	<div class="link-facebook"><a href="https://www.facebook.com/algarseguranca?fref=ts"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/facebook.png" alt="Facebook" /></a></div>
         	<ul class="linksMenuGA">
             	<?php
 				if ( has_nav_menu( 'header-menu-1' ) ) {

@@ -66,7 +66,7 @@ get_header(); ?>
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-contato.png" alt="Entre em Contato">
             </div>
             <?php endwhile; endif; ?>
-            <?php get_template_part('popup','contato'); ?>
+            <?php //get_template_part('popup','contato'); ?>
         </div>
     </section>
 <?php get_footer(); ?>
