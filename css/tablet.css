@@ -23,7 +23,9 @@
 .img-destaque { position: relative;left: inherit; /* padding: 0 65px; */ width: 50%; text-align: center; margin: 0 auto; }
 .img-destaque img { width: 100%; height: auto; display: inline-block; }
 
-.popup-contato { display:none; }
+.popup-contato { display:block; position:relative; right:auto; top:auto; background-color:transparent; }
+.popup-contato a.bt-fechar-contato { display:none; }
+.popup-contato button.bt-receber-contato {border:0px; }
 
 .coluna-left { width:100%; float:none; }
 .coluna-right { width:100%; float:none; }
@@ -40,3 +42,5 @@
 .lista-onde-estamos div { padding:20px 70px; display:none; }
 .lista-onde-estamos div p { margin-bottom:15px; }
 .lista-onde-estamos div p span { text-decoration:underline; }
+
+.mainContent .slider .slide .caption-slide p { display:none; }

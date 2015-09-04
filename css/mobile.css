@@ -22,7 +22,7 @@
 
 .menuGrupoAlgar { display:none; }
 
-.menuPaginas {border-bottom:2px groove #85bae9; width:100%; overflow:hidden; padding-bottom:0px; height:115px; background:#3b68a2; position:absolute; bottom:0; z-index:20000; }
+.menuPaginas {border-bottom:2px groove #85bae9; width:100%; overflow:hidden; padding-bottom:0px; height:115px; background:#3b68a2; position:absolute; bottom:0; }
 
 .menuPaginas .mPaginas { float:none; padding-top:0; padding-left:0; }
 .menuPaginas .mPaginas .linkMP li { display:inline-block; margin-right:0; text-align:center; padding-top:25px;}
@@ -51,7 +51,7 @@
 
 .menuPaginas .buscaSite { display:none; }
 
-.mainContent { width:100%; position:relative; padding-bottom:117px; height:272px;}
+.mainContent { width:100%; position:relative; padding-bottom:117px; height:272px; z-index:-1;}
 @media (min-width: 768px) and (min-height: 1024px) {
 	.mainContent { height:727px; }
 }
@@ -61,7 +61,7 @@
 @media (min-width: 604px) and (min-height: 966px) {
 	.mainContent { height:690px; }
 }
-.internas .mainContent { width:100%; position:relative; padding-bottom:117px; min-height:329px; overflow:hidden; height:auto;}
+.internas .mainContent { width:100%; position:relative; padding-bottom:117px; min-height:329px; overflow:hidden; height:auto; z-index:1;}
 
 span.no-mobile {display:none; }
 p.no-mobile {display:none; }
@@ -69,7 +69,7 @@ p.no-mobile {display:none; }
 /* Slider Parallax */
 .caption-slide { width:auto; height:auto; color:#FFF; position:relative; left:0; top:0; padding:30px; }
 .caption-slide h2 { font-size:1.3em; font-weight:bold; margin-bottom:20px; }
-.caption-slide p { line-height:150%; padding-bottom:10px; font-size:0.9em; }
+.mainContent .slider .slide .caption-slide p { display:none; }
 a.link-slide {display:block; background:url(../images/bullet-slider-paralax.png) no-repeat 0 0; width:20px; height:21px; overflow:hidden; text-indent:-999999px; }
 
 /* Footer */
@@ -194,6 +194,15 @@ margin: 0 auto;
 
 .listaSolucoes li a.consurela { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-cro.png) no-repeat 5% 50% #FFF; }
 .listaSolucoes li.ativado a.consurela { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-cro.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.custodia { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-custodia.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.custodia { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-custodia.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.sistema { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-sistema.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.sistema { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-sistema.png) no-repeat 5% 50% transparent; }
+
+.listaSolucoes li a.controleaf { background:url(../icones/arrow-seta-lado.png) no-repeat 97% 50%,url(../icones/icone-controle-af.png) no-repeat 5% 50% #FFF; }
+.listaSolucoes li.ativado a.controleaf { background:url(../images/cursor-lista-mobile-aberto-2.png) no-repeat 90% 50%, url(../icones/icone-controle-af.png) no-repeat 5% 50% transparent; }
 
 .area-cliente { display:block; margin:0 -30px; }
 .area-cliente a { display:block; font-size:1.8em; font-weight:bold; text-decoration:none; color:#FFF; position:relative; padding-top:18px; height:42px; text-transform:uppercase; padding-left:0; padding-right:0; text-align:center; border-bottom:2px groove #679766; background:url(../images/cursor-lista-mobile-fechado.png) no-repeat 90% 50% #4f8c4d; }

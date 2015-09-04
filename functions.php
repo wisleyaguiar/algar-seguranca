@@ -21,6 +21,40 @@ function algarseguranca_enqueue_script() {
 add_action( 'wp_enqueue_scripts', 'algarseguranca_enqueue_style' );
 add_action( 'wp_enqueue_scripts', 'algarseguranca_enqueue_script' );
 
+// Imagens destaques
+if ( function_exists( 'add_theme_support' ) ) { 
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
+
+    // additional image sizes
+    // delete the next line if you do not need additional image sizes
+    add_image_size( 'pages-thumb', 350, 9999 ); //300 pixels wide (and unlimited height)
+}
+
+// Customizando o Admin
+// Custom WordPress Login Logo
+function my_login_logo() { ?>
+<style type="text/css">
+   body.login div#login h1 a {
+        background-image: url(<?php echo get_stylesheet_directory_uri() ?>/images/logo-algar-geral.png);
+        padding-bottom: 30px;
+		background-size:auto;
+		width:177px;
+   }
+ </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+//Link na tela de login para a página inicial 
+function my_login_logo_url() {
+    return get_bloginfo( 'url' );
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+ 
+function my_login_logo_url_title() {
+    return 'Algar Segurança';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
 // Menus do Site
 function register_my_menus() {
   register_nav_menus(
@@ -82,10 +116,24 @@ function global_custom_options()
 {
 ?>
     <div class="wrap">
-        <h2>Página de Opções</h2>
-        <form method="post" action="options.php">
+        <h2 style="margin-bottom:30px;">Página de Opções</h2>
+        <form method="post" action="options.php" enctype="multipart/form-data">
             <?php wp_nonce_field('update-options') ?>
-            
+            <style type="text/css">
+				@import url(//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css);
+			</style>
+            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+            <script>
+  jQuery(function() {
+    jQuery( "#tabs" ).tabs();
+  });
+  </script>
+            <div id="tabs">
+  <ul>
+    <li><a href="#tabs-1">Links Diversos</a></li>
+    <li><a href="#tabs-2">Formulário de Contato</a></li>
+  </ul>
+  <div id="tabs-1">
             <table class="form-table">
               <tbody>
                 <tr>
@@ -100,12 +148,75 @@ function global_custom_options()
                   <th scope="row"><label for="tel_box_contato">Nº Telefone Box Contato:</label></th>
                   <td><input type="text" name="tel_box_contato" value="<?php echo get_option('tel_box_contato'); ?>" class="regular-text" /></td>
                 </tr>
+                <tr>
+                  <th scope="row"><label for="url_facebook">URL Facebook:</label></th>
+                  <td><input type="text" name="url_facebook" value="<?php echo get_option('url_facebook'); ?>" class="regular-text" /></td>
+                </tr>
               </tbody>
             </table>
-            
+            </div>
+  <div id="tabs-2">
+    <h3>Destinatários dos Emails:</h3>
+    <?php
+	$destinatarios = get_option('destinatario');
+	$c = 0;
+	if(is_array($destinatarios)) { ?>
+    <table width="100%" border="0">
+      <tbody class="lista-destinos">
+        <?php foreach($destinatarios as $destinatario) { ?>
+        <?php if(isset($destinatario['nome']) || isset($destinatario['email'])) { ?> 
+        <tr>
+          <td><input type="text" value="<?php echo $destinatario['nome']; ?>" name="destinatario[<?php echo $c; ?>][nome]" style="width:100%"></td>
+          <td><input type="text" value="<?php echo $destinatario['email']; ?>" name="destinatario[<?php echo $c; ?>][email]" style="width:100%"></td>
+          <td><button type="button" class="button button-primary remove">Remover</button></td>
+        </tr>
+        <?php $c = $c+1; } ?>
+        <?php } ?>
+      </tbody>
+    </table>
+	<?php } else { ?>
+    <table width="100%" border="0">
+      <tbody class="lista-destinos">
+      </tbody>
+    </table>
+    <p>Nenhum Destinatário Cadastrado.</p>
+    <?php } ?>
+    <button type="button" class="button button-primary" id="addMaisItens">Adicionar Mais Itens</button>
+    <script>
+		var count = <?php echo $c; ?>;
+		jQuery('#addMaisItens').click(function(e){
+			e.preventDefault();
+			count = count+1;
+			jQuery('.lista-destinos').append('<tr><td><input type="text" value="" name="destinatario['+count+'][nome]" style="width:100%"></td><td><input type="text" value="" name="destinatario['+count+'][email]" style="width:100%"></td><td><button type="button" class="button button-primary remove">Remover</button></td></tr>');
+			return false;
+		});
+		jQuery('.remove').live('click',function(){
+			jQuery(this).parent().parent().remove();
+		});
+	</script>
+    <h3>Configuração de Envio:</h3>
+    <table class="form-table">
+      <tbody>
+        <tr>
+          <th scope="row"><label for="server_smtp">Servidor SMTP:</label></th>
+          <td><input type="text" name="server_smtp" value="<?php echo get_option('server_smtp'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="user_smtp">Usuário:</label></th>
+          <td><input type="text" name="user_smtp" value="<?php echo get_option('user_smtp'); ?>" class="regular-text" /></td>
+        </tr>
+        <tr>
+          <th scope="row"><label for="pass_smtp">Senha:</label></th>
+          <td><input type="password" name="pass_smtp" value="<?php echo get_option('pass_smtp'); ?>" class="regular-text" /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
             <p class="submit"><input type="submit" name="Submit" value="Salvar alterações" class="button button-primary" /></p>
             <input type="hidden" name="action" value="update" />
-            <input type="hidden" name="page_options" value="url_area_cliente,url_gestao_doc,tel_box_contato" />
+            <input type="hidden" name="page_options" value="url_area_cliente,url_gestao_doc,tel_box_contato,url_facebook,destinatario,server_smtp,user_smtp,pass_smtp" />
         </form>
     </div>
 <?php

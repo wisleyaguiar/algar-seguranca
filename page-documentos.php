@@ -15,11 +15,16 @@ get_header(); ?>
             	
                 <?php the_content(); ?>
                 
-                <div class="area-cliente-desk"><a href="<?php echo get_option('url_gestao_doc'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bt-area-cliente.png" alt="Área do Cliente"></a></div>         
+                <!--div class="area-cliente-desk"><a href="<?php echo get_option('url_gestao_doc'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bt-area-cliente.png" alt="Área do Cliente"></a></div-->         
                 <div class="area-cliente"><a href="<?php echo get_option('url_gestao_doc'); ?>">ÁREA DO CLIENTE</a></div>
             </div>
             <div class="img-destaque">
+           	<?php // check if the post has a Post Thumbnail assigned to it.
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail('full');
+			}  else { ?>
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-gestao-doc.png" alt="Gestão de Documentos">
+            <?php } ?>
             </div>
             <?php endwhile; endif; ?>
             <?php get_template_part('popup', 'contato'); ?>

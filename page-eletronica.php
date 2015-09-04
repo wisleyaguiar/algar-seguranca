@@ -18,7 +18,12 @@ get_header(); ?>
                 <div class="area-cliente"><a href="<?php echo get_option('url_area_cliente'); ?>">ÁREA DO CLIENTE</a></div>
             </div>
             <div class="img-destaque">
-            	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-eletronica.png" alt="Eletronica">
+            	<?php // check if the post has a Post Thumbnail assigned to it.
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail('full');
+				}  else { ?>
+            		<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-eletronica.png" alt="Eletronica">
+                <?php } ?>
             </div>
             <?php endwhile; endif; ?>
             <?php get_template_part('popup','contato'); ?>

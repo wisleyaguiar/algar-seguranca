@@ -39,7 +39,15 @@ get_header(); ?>
                         </div>
                         <div class="form-grupo">
                         	<label for="segmento">Segmento de atuação</label>
-                            <input type="text" name="segmento" id="segmento" class="form-campo">
+                            <select name="segmento" id="segmento" class="form-campo3">
+                            	<option value="">Escolher</option>
+                                <?php $destinatarios = get_option('destinatario'); ?>
+                                <?php if(is_array($destinatarios)) { ?>
+                                <?php foreach($destinatarios as $destinatario) { ?>
+                                <option value="<?php echo $destinatario['email'] ?>"><?php echo $destinatario['nome'] ?></option>
+                                <?php } ?>
+                                <?php } ?>
+                            </select>
                         </div>
                         <div class="form-grupo">
                         	<label for="nomeEmpresa">Nome da empresa</label>
@@ -47,7 +55,36 @@ get_header(); ?>
                         </div>
                         <div class="form-grupo">
                         	<label for="estado">Estado</label>
-                            <input type="text" name="estado" id="estado" class="form-campo2">
+                            <select name="estado" id="estado" class="form-campo3">
+                                <option value="">Selecione</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espirito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
                         </div>
                         <div class="form-grupo">
                         	<label for="cidade">Cidade</label>
@@ -63,7 +100,12 @@ get_header(); ?>
                 <div class="area-cliente"><a href="<?php echo get_option('url_area_cliente'); ?>">ÁREA DO CLIENTE</a></div>
             </div>
             <div class="img-destaque">
+            <?php // check if the post has a Post Thumbnail assigned to it.
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail('full');
+			}  else { ?>
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-contato.png" alt="Entre em Contato">
+            <?php } ?>
             </div>
             <?php endwhile; endif; ?>
             <?php //get_template_part('popup','contato'); ?>

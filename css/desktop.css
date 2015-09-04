@@ -6,7 +6,11 @@
 .menuPaginas .buscaSite { width:230px; }
 .menuPaginas .buscaSite .grupo-form { width:147px; }
 .internas .menuPaginas .mPaginas .linkMP li a { font-size:1.2em; color:#3b68a2; text-decoration:none; display:inline-block; background:url(../icones/arrow-seta-baixo.png) no-repeat right center; padding-right:10px; transition:all ease 0.5s; text-shadow:0 1px 0 #000; }
-.popup-contato { display:none; }
+
+.popup-contato { display:block; position:relative; right:auto; top:auto; background-color:transparent; }
+.popup-contato a.bt-fechar-contato { display:none; }
+.popup-contato button.bt-receber-contato {border:0px; }
+
 .img-destaque {width: 342px; height: 100%; position: absolute; left: 640px; bottom: 0!important; }
 .img-destaque img { display:block; margin:0 auto; width:100%; height:auto; }
 

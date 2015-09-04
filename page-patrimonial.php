@@ -19,7 +19,12 @@ get_header(); ?>
                 
             </div>
             <div class="img-destaque">
-            	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-patrimonial.png" alt="Patrimonial">
+            	<?php // check if the post has a Post Thumbnail assigned to it.
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail('full');
+				}  else { ?>
+            		<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-patrimonial.png" alt="Patrimonial">
+                <?php } ?>
             </div>
             <?php endwhile; endif; ?>
             <?php get_template_part('popup', 'contato'); ?>

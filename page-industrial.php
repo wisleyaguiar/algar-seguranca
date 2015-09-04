@@ -18,7 +18,12 @@ get_header(); ?>
                 <?php the_content(); ?>
             </div>
             <div class="img-destaque">
+            <?php // check if the post has a Post Thumbnail assigned to it.
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail('full');
+			}  else { ?>
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-industria.png" alt="Indústriais">
+            <?php } ?>
             </div>
             <ul class="listSegmentoMobile">
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-service-industria', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>

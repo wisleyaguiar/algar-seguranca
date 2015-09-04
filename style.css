@@ -92,7 +92,7 @@ p.no-mobile {display:inline-block; }
 .mainContent .slider .slide .caption-slide a.link-slide {display:block; background:url(images/bullet-slider-paralax.png) no-repeat 0 0; width:20px!important; height:21px!important; overflow:hidden; text-indent:-999999px; }
 
 /* Footer */
-.footer { position: fixed; right:50px; bottom:50px; z-index:10000; display:none; }
+.footer { position: fixed; right:50px; bottom:50px; display:none; }
 
 /* Páginas Internas */
 .contentTextos { margin-left:65px; margin-top:62px; max-width:545px; height:auto; min-height:600px; }
@@ -179,10 +179,13 @@ div.area-cliente-desk { padding-bottom:40px; }
 .listaSolucoes li a.orga { background-image:url(icones/icone-organizacao.png); }
 .listaSolucoes li a.ttd { background-image:url(icones/icone-tabela-ttd.png); }
 .listaSolucoes li a.treina { background-image:url(icones/icone-treinamento.png); }
+.listaSolucoes li a.custodia { background-image:url(icones/icone-custodia.png); }
+.listaSolucoes li a.sistema { background-image:url(icones/icone-sistema.png); }
 
 .listaSolucoes li a.monimg { background-image:url(icones/icone-mdei.png); }
 .listaSolucoes li a.monialar { background-image:url(icones/icone-mdea.png); }
 .listaSolucoes li a.manuse { background-image:url(icones/icone-mse.png); }
+.listaSolucoes li a.controleaf { background-image:url(icones/icone-controle-af.png); }
 .listaSolucoes li a.monigprs { background-image:url(icones/icone-moni-gprs-ip.png); }
 .listaSolucoes li a.consurela { background-image:url(icones/icone-cro.png); }
 
@@ -196,5 +199,8 @@ div.area-cliente-desk { padding-bottom:40px; }
 .form-grupo label.radio { display:inline-block; width:auto; margin-right:15px; cursor:pointer; color:#61abeb; }
 .form-grupo .form-campo, .form-grupo .form-campo2, .form-grupo .form-textarea {  border-radius: 5px;  background-color: #f7f7f8;  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.35);  width:100%;  height: 38px;  border:0;  outline:none;  font-size:20px; }
 .form-grupo .form-campo2 { width:50%; }
+.form-grupo .form-campo3 { width:50%; border-radius: 5px;  background-color: #f7f7f8;  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.35);  height: 38px;  border:0;  outline:none;  font-size:14px; -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;}
 .form-grupo .form-textarea { height:150px; resize:none; }
 .formContato button {  border-style: solid; border-width: 1px; border-color: rgb(31, 27, 26); border-radius: 5px; background-color: rgb(77, 137, 83); box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.004); width: 105px; height: 43px; color:#FFF; font-family:'dax', sans-serif; font-weight:bold; font-size:25px; cursor:pointer; float:right; }
