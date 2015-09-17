@@ -25,6 +25,18 @@ get_header(); ?>
             	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-residencial.png" alt="Residencial">
             <?php } ?>
             </div>
+            <div class="img-destaque-mobile">
+            	<?php if (class_exists('MultiPostThumbnails')) {
+					MultiPostThumbnails::the_post_thumbnail(
+						get_post_type(),
+						'mobile-image',
+						$post->ID,
+						'full'
+					);
+				} else { ?>
+                	<img src="<?php echo get_stylesheet_directory_uri(); ?>/fotos/foto-page-residencial.png" alt="Residencial">
+                <?php } ?>
+            </div>
             <ul class="listSegmentoMobile">
                 <?php wp_nav_menu( array( 'theme_location' => 'menu-service-residencial', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
             </ul>

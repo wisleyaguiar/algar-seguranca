@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="Testes Algar Segurança">
+    <serverData>
+      <paths name="Testes Algar Segurança">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/algar-seguranca/wp-content/themes/algarseguranca" local="$PROJECT_DIR$" web="/algar-seguranca" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
