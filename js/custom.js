@@ -38,6 +38,18 @@ jQuery('.lista-onde-estamos h3').click(function(){
 			jQuery(this).next('div').show('slow');
 		}
 	});
+
+// Mascara de telefone
+var SPMaskBehavior = function (val) {
+		return val.replace(/\D/g, '').length === 11 ? '(00) 00000-0000' : '(00) 0000-00009';
+	},
+	spOptions = {
+		onKeyPress: function(val, e, field, options) {
+			field.mask(SPMaskBehavior.apply({}, arguments), options);
+		}
+	};
+
+jQuery('#tel').mask(SPMaskBehavior, spOptions)
 	
 // Responsive
 var ativado = false;

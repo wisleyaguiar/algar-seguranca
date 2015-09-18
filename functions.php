@@ -15,6 +15,7 @@ function algarseguranca_enqueue_script() {
 	wp_enqueue_script( 'bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.js', array('jquery'), false, true );
 	wp_enqueue_script( 'fractionslider', get_stylesheet_directory_uri() . '/js/jquery.fractionslider.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'bxslider', get_stylesheet_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.min.js', array('jquery'), false, true );
+    wp_enqueue_script( 'mask', get_stylesheet_directory_uri() . '/js/jquery.mask.min.js', array('jquery'), false, true);
 	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), false, true );
 }
 
