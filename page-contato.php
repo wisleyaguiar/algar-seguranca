@@ -44,6 +44,7 @@ get_header(); ?>
                                     <?php } ?>
                                 <?php } ?>
                             </select>
+                            <input type="hidden" name="nomeSeguimento" id="nomeSeguimento" value="">
                         </div>
                         <div class="form-grupo">
                         	<label for="nomeEmpresa">*Nome da empresa</label>

@@ -252,6 +252,7 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
         $tel = strip_tags(trim($_POST['tel']));
         $pessoa = strip_tags(trim($_POST['pessoa']));
         $segmento = strip_tags(trim($_POST['segmento']));
+        $nomeSeguimento = strip_tags(trim($_POST['nomeSeguimento']));
         $nomeEmpresa = strip_tags(trim($_POST['nomeEmpresa']));
         $estado = strip_tags(trim($_POST['estado']));
         $cidade = strip_tags(trim($_POST['cidade']));
@@ -311,6 +312,7 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             $resp['erro'] = true;
         } else {
             $mail = new PHPMailer;
+            $mail->CharSet = 'UTF-8';
 
             //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
@@ -346,8 +348,8 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
 
             $mail->isHTML(true);                  // Set email format to HTML
 
-            $mail->Subject = 'Contato Via Site Algar Segurança';
-            $mail->Body    = '<h2>Dados Enviados:</h2><p>Nome: '.$nome.'</p><p>Email: '.$email.'</p><p>Telefone: '.$tel.'</p><p>Tipo Pessoa: '.$pessoa.'</p><p>Segmento de destino: '.$segmento.'</p><p>Nome da Empresa: '.$nomeEmpresa.'</p><p>Estado: '.$estado.'</p><p>Cidade: '.$cidade.'</p><p>Mensagem: '.$mensagem.'</p>';
+            $mail->Subject = 'Contato Via Site Algar Seguranca';
+            $mail->Body    = '<h2>Dados Enviados:</h2><p>Nome: '.$nome.'</p><p>Email: '.$email.'</p><p>Telefone: '.$tel.'</p><p>Tipo Pessoa: '.$pessoa.'</p><p>Segmento de destino: '.$nomeSeguimento.'</p><p>Nome da Empresa: '.$nomeEmpresa.'</p><p>Estado: '.$estado.'</p><p>Cidade: '.$cidade.'</p><p>Mensagem: '.$mensagem.'</p>';
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             if(!$mail->send()) {

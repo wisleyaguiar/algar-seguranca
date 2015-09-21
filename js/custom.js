@@ -51,6 +51,16 @@ var SPMaskBehavior = function (val) {
 
 jQuery('#tel').mask(SPMaskBehavior, spOptions);
 
+jQuery( "#segmento" )
+	.change(function () {
+		var str = "";
+		jQuery( "#segmento option:selected" ).each(function() {
+			str = jQuery( this).text();
+		});
+		jQuery( "#nomeSeguimento").val(str);
+	})
+	.change();
+
 // Formulário de Contato
 jQuery("#formContatoField").validate({
 	rules: {
