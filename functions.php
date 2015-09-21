@@ -315,16 +315,30 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             //$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
             $mail->isSMTP();                                      // Set mailer to use SMTP
-            $mail->Host = 'smtp1.example.com';  // Specify main and backup SMTP servers
+            $mail->Host = get_option('server_smtp');              // Specify main and backup SMTP servers
             $mail->SMTPAuth = true;                               // Enable SMTP authentication
-            $mail->Username = 'user@example.com';                 // SMTP username
-            $mail->Password = 'secret';                           // SMTP password
+            $mail->Username = get_option('user_smtp');            // SMTP username
+            $mail->Password = get_option('pass_smtp');            // SMTP password
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
 
             $mail->From = 'from@example.com';
             $mail->FromName = 'Mailer';
-            $mail->addAddress($segmento);     // Add a recipient
+
+            // Array Segmento
+            $destinatario = explode(',',$segmento);
+
+            if(is_array($destinatario)) {
+                if(count($destinatario)>1){
+                    for($i=0;$i<count($destinatario);$i++){
+                        $mail->addAddress($destinatario[$i]);
+                    }
+                } else {
+                    $mail->addAddress($destinatario[0]);
+                }
+            } else {
+                $mail->addAddress($segmento);     // Add a recipient
+            }
             $mail->addReplyTo($email, $nome);
             //$mail->addCC('cc@example.com');
             //$mail->addBCC('bcc@example.com');
