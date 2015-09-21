@@ -49,7 +49,58 @@ var SPMaskBehavior = function (val) {
 		}
 	};
 
-jQuery('#tel').mask(SPMaskBehavior, spOptions)
+jQuery('#tel').mask(SPMaskBehavior, spOptions);
+
+// Formulário de Contato
+jQuery("#formContatoField").validate({
+	rules: {
+		nome: "required",
+		email: {
+			required: true,
+			email: true
+		},
+		tel: "required",
+		pessoa: "required",
+		segmento: "required",
+		nomeEmpresa: "required",
+		estado: "required",
+		cidade: "required",
+		mensagem: "required"
+	},
+	messages: {
+		nome: "Nome é obrigatório",
+		email: {
+			required: "Email é obrigatório",
+			email: "Email incorreto."
+		},
+		tel: "Telefone obrigatório",
+		pessoa: "Tipo de pessoa obrigatório",
+		segmento: "Seguimento obrigatório",
+		nomeEmpresa: "Nome da empresa obrigatório",
+		estado: "Estado obrigatório",
+		cidade: "Cidade Obrigatório",
+		mensagem: "Mensagem de contato obrigatória"
+	},
+	submitHandler: function(form) {
+		jQuery.ajax({
+			url: ajax_object.ajax_url,
+			dataType:'json',
+			data: jQuery(form).serialize(),
+			method: 'POST',
+			beforeSend: function(){
+				jQuery("#enviar").attr("disabled", "disabled").html("Enviando...");
+			}
+		}).done(function(data){
+			if(data.erro){
+				jQuery("#enviar").removeAttr("disabled").html("Enviar");
+				alert(data.msg);
+			} else {
+				jQuery("#enviar").html("Sucesso...");
+				alert(data.msg);
+			}
+		});
+	}
+});
 	
 // Responsive
 var ativado = false;

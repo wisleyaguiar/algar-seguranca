@@ -13,7 +13,7 @@ get_header(); ?>
         	<div class="contentTextos">
             	<?php the_content(); ?>
                 <div class="formContato" id="formContato">
-                	<form name="formContato" action="#" method="post">
+                	<form name="formContato" id="formContatoField" action="<?php echo home_url('/'); ?>" method="post">
                     	<div class="form-grupo">
                         	<label for="nome">*Nome</label>
                             <input type="text" name="nome" id="nome" class="form-campo">
@@ -39,9 +39,9 @@ get_header(); ?>
                             	<option value="">Escolher</option>
                                 <?php $destinatarios = get_option('destinatario'); ?>
                                 <?php if(is_array($destinatarios)) { ?>
-                                <?php foreach($destinatarios as $destinatario) { ?>
-                                <option value="<?php echo $destinatario['email'] ?>"><?php echo $destinatario['nome'] ?></option>
-                                <?php } ?>
+                                    <?php foreach($destinatarios as $destinatario) { ?>
+                                        <option value="<?php echo $destinatario['email'] ?>"><?php echo $destinatario['nome'] ?></option>
+                                    <?php } ?>
                                 <?php } ?>
                             </select>
                         </div>
@@ -89,6 +89,7 @@ get_header(); ?>
                         <div class="form-grupo">
                         	<label for="mensagem">*Mensagem</label>
                             <textarea name="mensagem" id="mensagem" class="form-textarea"></textarea>
+                            <input type="hidden" name="action" value="my_action">
                         </div>
                         <button type="submit" name="enviar" id="enviar">Enviar</button>
                     </form>

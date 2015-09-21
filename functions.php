@@ -16,7 +16,11 @@ function algarseguranca_enqueue_script() {
 	wp_enqueue_script( 'fractionslider', get_stylesheet_directory_uri() . '/js/jquery.fractionslider.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'bxslider', get_stylesheet_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.min.js', array('jquery'), false, true );
     wp_enqueue_script( 'mask', get_stylesheet_directory_uri() . '/js/jquery.mask.min.js', array('jquery'), false, true);
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/jquery.validate.js', array('jquery'), false, true);
 	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), false, true );
+
+    wp_localize_script( 'custom', 'ajax_object',
+        array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'algarseguranca_enqueue_style' );
@@ -232,3 +236,142 @@ function global_custom_options()
     </div>
 <?php
 }
+
+// Envio de formulário
+add_action( 'wp_ajax_my_action', 'enviarFormulario' );
+add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
+
+    function enviarFormulario() {
+        global $wpdb;
+
+        require_once('lib/PHPMailer-master/PHPMailerAutoload.php');
+
+        // Recebendo os dados do form
+        $nome = strip_tags(trim($_POST['nome']));
+        $email = strip_tags(trim($_POST['email']));
+        $tel = strip_tags(trim($_POST['tel']));
+        $pessoa = strip_tags(trim($_POST['pessoa']));
+        $segmento = strip_tags(trim($_POST['segmento']));
+        $nomeEmpresa = strip_tags(trim($_POST['nomeEmpresa']));
+        $estado = strip_tags(trim($_POST['estado']));
+        $cidade = strip_tags(trim($_POST['cidade']));
+        $mensagem = strip_tags(trim($_POST['mensagem']));
+
+        // Validando dados pelo servidor
+        $erros = 0;
+        $msg = "";
+
+        if(empty($nome) || strlen($nome)<3) {
+            $erros++;
+            $msg .= "Nome não informado.";
+        }
+
+        if(empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $erros++;
+            $msg .= "Email inválido.";
+        }
+
+        if(empty($tel) || strlen($tel)<11) {
+            $erros++;
+            $msg .= "Telefone não informado.";
+        }
+
+        if(empty($pessoa)) {
+            $erros++;
+            $msg .= "Você é não informado.";
+        }
+
+        if(empty($segmento)) {
+            $erros++;
+            $msg .= "Segmento não informado.";
+        }
+
+        if(empty($nomeEmpresa)) {
+            $erros++;
+            $msg .= "Nome da empresa não informado.";
+        }
+
+        if(empty($estado)) {
+            $erros++;
+            $msg .= "Estado não informado.";
+        }
+
+        if(empty($cidade)) {
+            $erros++;
+            $msg .= "Cidade não informado.";
+        }
+
+        if(empty($mensagem)) {
+            $erros++;
+            $msg .= "Mensagem não informado.";
+        }
+
+        if($erros>0){
+            $resp['msg'] = $msg;
+            $resp['erro'] = true;
+        } else {
+            $mail = new PHPMailer;
+
+            //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+            $mail->isSMTP();                                      // Set mailer to use SMTP
+            $mail->Host = 'smtp1.example.com';  // Specify main and backup SMTP servers
+            $mail->SMTPAuth = true;                               // Enable SMTP authentication
+            $mail->Username = 'user@example.com';                 // SMTP username
+            $mail->Password = 'secret';                           // SMTP password
+            $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+            $mail->Port = 587;                                    // TCP port to connect to
+
+            $mail->From = 'from@example.com';
+            $mail->FromName = 'Mailer';
+            $mail->addAddress($segmento);     // Add a recipient
+            $mail->addReplyTo($email, $nome);
+            //$mail->addCC('cc@example.com');
+            //$mail->addBCC('bcc@example.com');
+
+            $mail->isHTML(true);                                  // Set email format to HTML
+
+            $mail->Subject = 'Contato Via Site Algar Segurança';
+            $mail->Body    = '<h2>Dados Enviados:</h2><p>Nome: '.$nome.'</p><p>Email: '.$email.'</p><p>Telefone: '.$tel.'</p><p>Tipo Pessoa: '.$pessoa.'</p><p>Segmento de destino: '.$segmento.'</p><p>Nome da Empresa: '.$nomeEmpresa.'</p><p>Estado: '.$estado.'</p><p>Cidade: '.$cidade.'</p><p>Mensagem: '.$mensagem.'</p>';
+            $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+            if(!$mail->send()) {
+                $resp['msg'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+                $resp['erro'] = true;
+            } else {
+
+                $wpdb->insert(
+                    'wp_contatos',
+                    array(
+                        'nome' => $nome,
+                        'email' => $email,
+                        'tel' => $tel,
+                        'pessoa' => $pessoa,
+                        'segmento' => $segmento,
+                        'nomeEmpresa' => $nomeEmpresa,
+                        'estado' => $estado,
+                        'cidade' => $cidade,
+                        'mensagem' => $mensagem
+                    ),
+                    array(
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s',
+                        '%s'
+                    )
+                );
+
+                $resp['msg'] = 'Enviado';
+                $resp['erro'] = false;
+            }
+        }
+
+        echo json_encode($resp);
+        wp_die();
+
+    }
