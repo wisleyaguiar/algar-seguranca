@@ -322,8 +322,8 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
             $mail->Port = 587;                                    // TCP port to connect to
 
-            $mail->From = 'from@example.com';
-            $mail->FromName = 'Mailer';
+            $mail->From = get_option('user_smtp');
+            $mail->FromName = 'Contato Algar Segurança';
 
             // Array Segmento
             $destinatario = explode(',',$segmento);
@@ -341,9 +341,10 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             }
             $mail->addReplyTo($email, $nome);
             //$mail->addCC('cc@example.com');
-            //$mail->addBCC('bcc@example.com');
+            $mail->addBCC('muniz@tobe.ppg.br');
+            $mail->addBCC('wisley@tobe.ppg.br');
 
-            $mail->isHTML(true);                                  // Set email format to HTML
+            $mail->isHTML(true);                  // Set email format to HTML
 
             $mail->Subject = 'Contato Via Site Algar Segurança';
             $mail->Body    = '<h2>Dados Enviados:</h2><p>Nome: '.$nome.'</p><p>Email: '.$email.'</p><p>Telefone: '.$tel.'</p><p>Tipo Pessoa: '.$pessoa.'</p><p>Segmento de destino: '.$segmento.'</p><p>Nome da Empresa: '.$nomeEmpresa.'</p><p>Estado: '.$estado.'</p><p>Cidade: '.$cidade.'</p><p>Mensagem: '.$mensagem.'</p>';
