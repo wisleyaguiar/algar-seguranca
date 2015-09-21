@@ -95,8 +95,8 @@ jQuery("#formContatoField").validate({
 				jQuery("#enviar").removeAttr("disabled").html("Enviar");
 				alert(data.msg);
 			} else {
-				jQuery("#enviar").html("Sucesso...");
-				alert(data.msg);
+				jQuery("#enviar").html(data.msg);
+				dataLayer.push({'formContato': 'Enviado'});
 			}
 		});
 	}

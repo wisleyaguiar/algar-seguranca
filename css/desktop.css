@@ -7,7 +7,7 @@
 .menuPaginas .buscaSite .grupo-form { width:147px; }
 .internas .menuPaginas .mPaginas .linkMP li a { font-size:1.2em; color:#3b68a2; text-decoration:none; display:inline-block; background:url(../icones/arrow-seta-baixo.png) no-repeat right center; padding-right:10px; transition:all ease 0.5s; /*text-shadow:0 1px 0 #000;*/ }
 
-.popup-contato { display:block; position:relative; right:auto; top:auto; background-color:#f1c930; margin-left:63px; padding-top:1px; }
+/*.popup-contato { display:block; position:relative; right:auto; top:auto; background-color:#f1c930; margin-left:63px; padding-top:1px; }*/
 .popup-contato a.bt-fechar-contato { display:none; }
 .popup-contato button.bt-receber-contato {border:0px; }
 

@@ -1,5 +1,5 @@
 <div class="popup-contato">
     <!--a href="#" class="bt-fechar-contato">Fechar</a-->
     <div class="num-tel">Entre em contato<br><span><?php echo get_option('tel_box_contato'); ?></span></div>
-    <button type="submit" name="receberContato" id="receberContato" class="bt-receber-contato" onClick="window.location='<?php echo home_url() ?>/contato'; dataLayer.push('receberContato','<?php echo get_the_ID(); ?>');">Receber contato</button>
+    <a href="<?php echo home_url() ?>/contato" id="receberContato" class="bt-receber-contato" onClick="dataLayer.push({'receberContato': '<?php echo get_post(get_the_ID())->post_name; ?>'});">Receber contato</a>
 </div>

@@ -118,7 +118,7 @@ p.no-mobile {display:inline-block; }
 .listSegmento li.icon-documental a { background-image:url(icones/icone-page-documental.png); }
 .listSegmento li.icon-patrimonial a { background-image:url(icones/icone-page-patrimonial.png); }
 
-.img-destaque { width:540px; height:auto; min-height:100%; position:absolute; left:640px; top:198px; background-image:url(fotos/grafismo-fundo-imagem.png); background-position:50% 80px;; background-repeat:no-repeat; background-size:contain; }
+.img-destaque { width:540px; height:auto; min-height:100%; position:absolute; left:640px; top:198px; background-image:url(fotos/grafismo-fundo-imagem.png); background-position:50% 80px; background-repeat:no-repeat; background-size:contain; }
 .img-destaque img { display:block; margin:0 auto; }
 #patrimonial .img-destaque { bottom:-10%; }
 #eletronica .img-destaque { bottom:-50%; }
@@ -138,7 +138,7 @@ p.no-mobile {display:inline-block; }
 .popup-contato .num-tel span { font-size:16px; font-weight:bold; }
 .popup-contato .input-form-contato { width:266px; margin-bottom:10px; margin-left:15px; }
 .popup-contato .input-form-contato input.form-input-contato { border:1px solid #bc9d2a; font-size:1.25em; color:#7f7f7f; font-style:italic; font-family:'dax', sans-serif; width:auto; min-width:100%; padding:10px 13px; display:block; outline:none; }
-.popup-contato button.bt-receber-contato {border:1px solid #bc9d2a; background-color:#4d8953; color:#FFF; font-family:'dax', sans-serif; font-size:20px; border-radius:8px; box-shadow:1px 1px 0 #FFF; cursor:pointer; width:160px; height:35px; }
+.popup-contato a.bt-receber-contato {display:block; border:1px solid #bc9d2a; background-color:#4d8953; color:#FFF; font-family:'dax', sans-serif; font-size:20px; border-radius:8px; box-shadow:1px 1px 0 #FFF; cursor:pointer; width:160px; height: 25px;	margin: auto; text-decoration: none; padding-top: 10px; }
 .popup-contato a.link-politica { color:#47719d; text-decoration:none; font-size:0.93em; display:inline-block; padding:6px 0; }
 
 /* Página Agente Cuida */
