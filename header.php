@@ -45,6 +45,14 @@ var ADAPT_CONFIG = {
 </head>
 <body<?php if(!is_front_page()) { ?> class="internas"<?php } ?>>
 <?php do_action( 'body_open' ); ?>
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KCDZRN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KCDZRN');</script>
+<!-- End Google Tag Manager -->
 <div class="page">
 	<!-- Header menu Lateral -->
 	<header class="header">

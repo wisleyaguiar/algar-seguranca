@@ -45,11 +45,14 @@ get_header(); ?>
 						$oe_tel	   = get_post_meta($post->ID, 'oe_tel', true);
 						$oe_ponto_top = get_post_meta($post->ID, 'oe_ponto_top', true);
 						$oe_ponto_left = get_post_meta($post->ID, 'oe_ponto_left', true); ?>
-                        <a href="#<?php echo $post->post_name;?>" class="indicador-mapa" id="<?php echo $post->post_name;?>" style="top:<?php echo $oe_ponto_top ?>; left:<?php echo $oe_ponto_left ?>;">
+                        <a href="#<?php echo $post->post_name;?>" class="indicador-mapa" id="<?php echo $post->post_name;?>" style="top:<?php echo $oe_ponto_top ?>; left:<?php echo $oe_ponto_left ?>;<?php if($post->post_name == 'uberlandia') { ?> background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/indicador-mapa-udi.png);<?php } ?>">
                             <div class="box-infos-mapa" style="z-index:<?php echo $post->ID; ?>">
                                 <h2><?php echo $oe_cidade; ?>/<?php echo $oe_estado; ?></h2>
                                 <p><?php echo $oe_end; ?> – <?php echo $oe_bairro; ?><br>CEP <?php echo $oe_cep; ?></p>
                                 <p class="telefone">Pabx <?php echo $oe_tel ?></p>
+								<?php if($post->post_name == 'uberlandia') { ?>
+									<p style="font-weight:bold;">Matriz</p>
+								<?php } ?>
                             </div>
                         </a>
                         <?php 	}

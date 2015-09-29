@@ -28,7 +28,7 @@ body.internas { background:#FFF; overflow:auto; }
 
 .container { width:auto; margin-left:253px; height:auto; min-height:100%; }
 
-.header-fixo { position: fixed; width: 100%; z-index: 1; left: 0;}
+.header-fixo { position: fixed; width: 100%; z-index: 2; left: 0;}
 .internas .header-fixo { background: #FFF; }
 
 .menuGrupoAlgar { width:100%; overflow:hidden; padding:26px 0; }
@@ -104,7 +104,7 @@ p.no-mobile {display:inline-block; }
 .contentTextos p { color:#3b68a2; font-size:1.1em; line-height:150%; padding-bottom:15px; text-align:justify; }
 .contentTextos ul.lista { list-style:disc; padding-left:25px; color:#3b68a2; line-height:150%; margin-bottom:15px; }
 .contentTextos ul.lista li { font-size:1.1em; }
-.contentTextos blockquote p { color:#3b68a2; font-style:italic; font-size:1.5em!important; margin-bottom:30px; padding-bottom:0!important; }
+.contentTextos blockquote p { color:#3b68a2; text-align:left; font-style:italic; font-size:1.5em!important; margin-bottom:30px; padding-bottom:0!important; }
 .contentTextos a { color:#61abeb; text-decoration:none; }
 .contentTextos a:hover { text-decoration:underline; }
 
@@ -149,7 +149,7 @@ p.no-mobile {display:inline-block; }
 
 .mapa-onde-estamos { background:url(icones/mapa-brasil-onde-estamos.png) no-repeat center; width:683px; height:651px; margin-top:40px; position:relative; }
 .mapa-onde-estamos .indicador-mapa { display:block; position:absolute; background:url(images/indicador-mapa.png) no-repeat 0 0; width:17px; height:19px; transition:all ease 0.5s; }
-.mapa-onde-estamos .indicador-mapa .box-infos-mapa { display:none; position:absolute; background:url(images/bg-toltip-mapa.png) no-repeat 0 0; width:325px; height:263px; top:-267px; left:-50px; transition:all ease 0.5s; }
+.mapa-onde-estamos .indicador-mapa .box-infos-mapa { font-size:113%; display:none; position:absolute; background:url(images/bg-toltip-mapa.png) no-repeat 0 0; width:325px; height:263px; top:-267px; left:-50px; transition:all ease 0.5s; }
 .mapa-onde-estamos .indicador-mapa .box-infos-mapa h2 { font-size:1.9em; color:#47719d; display:block; padding:30px 25px 10px; margin:0; }
 .mapa-onde-estamos .indicador-mapa .box-infos-mapa p { color:#47719d; padding:10px 25px 0; }
 .mapa-onde-estamos .indicador-mapa .box-infos-mapa p.telefone {font-weight:bold; }

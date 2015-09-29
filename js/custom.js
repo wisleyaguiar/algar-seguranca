@@ -146,7 +146,7 @@ if (windowWidth <= 768) {
 			pager:false,
 			minSlides: 2,
 			maxSlides: 7,
-			slideWidth: 115,
+			slideWidth: 117,
 			slideMargin: 14
 		});
 		ativado=true;
@@ -186,7 +186,7 @@ if (win.width() <= 768) {
 			pager:false,
 			minSlides: 2,
 			maxSlides: 7,
-			slideWidth: 115,
+			slideWidth: 117,
 			slideMargin: 14
 		});
 		ativado=true;

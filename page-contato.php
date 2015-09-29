@@ -34,7 +34,7 @@ get_header(); ?>
                             <input type="radio" name="pessoa" id="pjuridica" class="form-radio" value="Pessoa Jurídica"> Pessoa Jurídica</label>
                         </div>
                         <div class="form-grupo">
-                        	<label for="segmento">*Segmento de atuação</label>
+                        	<label for="segmento">*Selecione área para contato</label>
                             <select name="segmento" id="segmento" class="form-campo3">
                             	<option value="">Escolher</option>
                                 <?php $destinatarios = get_option('destinatario'); ?>

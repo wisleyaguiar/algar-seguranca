@@ -20,7 +20,7 @@
 
 .container { width:auto; margin-left:0; position:relative; padding-top:80px; }
 
-.header-fixo { position:absolute; width: 100%; z-index: 1; left: 0; bottom:0;}
+.header-fixo { position:absolute; width: 100%; z-index: 2; left: 0; bottom:0;}
 .internas .header-fixo { background: #FFF; z-index:2; }
 
 .menuGrupoAlgar { display:none; }
@@ -54,15 +54,15 @@
 
 .menuPaginas .buscaSite { display:none; }
 
-.mainContent { width:100%; position:relative; padding-bottom:117px; height:272px; z-index:-1; padding-top:0;}
-@media (min-width: 768px) and (min-height: 1024px) {
-	.mainContent { height:727px; }
+.mainContent { width:100%; position:relative; padding-bottom:117px; min-height:329px; padding-top:0;}
+@media (min-width: 768px) {
+	.mainContent { min-height:727px; }
 }
-@media (min-width: 600px) and (min-height: 1024px) {
-	.mainContent { height:727px; }
+@media (min-width: 600px) {
+	.mainContent { min-height:727px; }
 }
-@media (min-width: 604px) and (min-height: 966px) {
-	.mainContent { height:690px; }
+@media (min-width: 604px) {
+	.mainContent { min-height:690px; }
 }
 .internas .mainContent { width:100%; position:relative; padding-bottom:117px; min-height:329px; overflow:hidden; height:auto; z-index:1;}
 
@@ -76,7 +76,7 @@ p.no-mobile {display:none; }
 a.link-slide {display:block; background:url(../images/bullet-slider-paralax.png) no-repeat 0 0; width:20px; height:21px; overflow:hidden; text-indent:-999999px; }
 
 /* Footer */
-.footer { width:100%; background-color:#3b68a2; margin:0; height:60px; position:inherit; right:0; bottom:0; display:block;}
+.footer { width:100%; background-color:#3b68a2; margin:0; height:60px; position:relative; right:0; bottom:0; display:block; z-index:2;}
 .footer .logoRodape {width:auto; margin:0 auto; padding-top:20px; text-align:center}
 .footer .logoRodape img {width:140px; height:auto; }
 .footer .logoRodape a { color:#FFF; text-decoration:none; font-size:24px; }
