@@ -73,7 +73,7 @@ p.no-mobile {display:none; }
 .caption-slide { width:auto; height:auto; color:#FFF; position:relative; left:0; top:0; padding:30px; }
 .caption-slide h2 { font-size:1.3em; font-weight:bold; margin-bottom:20px; }
 .mainContent .slider .slide .caption-slide p { display:none; }
-a.link-slide {display:block; background:url(../images/bullet-slider-paralax.png) no-repeat 0 0; width:20px; height:21px; overflow:hidden; text-indent:-999999px; }
+.mainContent .slider .slide .caption-slide a.link-slide {background-size: 10px;}
 
 /* Footer */
 .footer { width:100%; background-color:#3b68a2; margin:0; height:60px; position:relative; right:0; bottom:0; display:block; z-index:2;}

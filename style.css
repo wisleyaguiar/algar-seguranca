@@ -92,7 +92,7 @@ p.no-mobile {display:inline-block; }
 .mainContent .slider .slide .caption-slide { width:612px; color:#FFF; }
 .mainContent .slider .slide .caption-slide h2 { font-size:84px; font-weight:bold; margin-bottom:20px; }
 .mainContent .slider .slide .caption-slide p { line-height:130%!important; padding-bottom:10px; display:block; font-size:27px; font-style:italic; }
-.mainContent .slider .slide .caption-slide a.link-slide {display:block; background:url(images/bullet-slider-paralax.png) no-repeat 0 0; width:20px!important; height:21px!important; overflow:hidden; text-indent:-999999px; }
+.mainContent .slider .slide .caption-slide a.link-slide {display:block; color:#FFF; text-decoration:none; font-size: 25px; font-weight: bold; background:url(images/bullet-slider-paralax.png) no-repeat 0 0; padding-left: 30px; width:100%!important; height:21px!important; overflow:hidden; }
 
 /* Footer */
 .footer { position: fixed; right:50px; bottom:50px; display:none; }
