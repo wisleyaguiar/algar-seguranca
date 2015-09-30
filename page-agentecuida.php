@@ -49,7 +49,7 @@ get_header(); ?>
                             <div class="box-infos-mapa" style="z-index:<?php echo $post->ID; ?>">
                                 <h2><?php echo $oe_cidade; ?>/<?php echo $oe_estado; ?></h2>
                                 <p><?php echo $oe_end; ?> – <?php echo $oe_bairro; ?><br>CEP <?php echo $oe_cep; ?></p>
-                                <p class="telefone">Pabx <?php echo $oe_tel ?></p>
+                                <p class="telefone"><?php echo $oe_tel ?></p>
 								<?php if($post->post_name == 'uberlandia') { ?>
 									<p style="font-weight:bold;">Matriz</p>
 								<?php } ?>
@@ -125,7 +125,7 @@ get_header(); ?>
                         <p><span><?php echo get_post_meta($post->ID, 'oe_cidade', true); ?></span><br>
                         <?php echo get_post_meta($post->ID, 'oe_end', true); ?> – <?php echo get_post_meta($post->ID, 'oe_bairro', true); ?><br>
                         CEP <?php echo get_post_meta($post->ID, 'oe_cep', true); ?> <?php echo get_post_meta($post->ID, 'oe_cidade', true); ?> – <?php echo get_post_meta($post->ID, 'oe_estado', true); ?><br>
-                        Pabx <a href="tel:<?php echo get_post_meta($post->ID, 'oe_tel', true); ?>"><?php echo get_post_meta($post->ID, 'oe_tel', true); ?></a></p>
+                        <a href="tel:<?php echo get_post_meta($post->ID, 'oe_tel', true); ?>"><?php echo get_post_meta($post->ID, 'oe_tel', true); ?></a></p>
                         <?php } ?>
                     </div>
                  <?php
