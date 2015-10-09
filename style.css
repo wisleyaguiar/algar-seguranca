@@ -212,3 +212,4 @@ div.area-cliente-desk { padding-bottom:40px; }
 .formContato button {  border-style: solid; border-width: 0; border-color: rgb(31, 27, 26); border-radius: 5px; background-color: rgb(77, 137, 83); box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.004); width: 105px; height: 43px; color:#FFF; font-family:'dax', sans-serif; font-weight:bold; font-size:18px; cursor:pointer; float:right; }
 
 label.error {color:red;}
+#uploadfile { display: none; }

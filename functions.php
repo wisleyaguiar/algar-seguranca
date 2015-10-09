@@ -17,8 +17,8 @@ function algarseguranca_enqueue_script() {
 	wp_enqueue_script( 'fractionslider', get_stylesheet_directory_uri() . '/js/jquery.fractionslider.min.js', array('jquery'), false, true );
 	wp_enqueue_script( 'bxslider', get_stylesheet_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.min.js', array('jquery'), false, true );
     wp_enqueue_script( 'mask', get_stylesheet_directory_uri() . '/js/jquery.mask.min.js', array('jquery'), false, true);
+    wp_enqueue_script( 'uploadfile', get_stylesheet_directory_uri() . '/js/jquery.uploadfile.min.js', array('jquery'), false, true);
     wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/jquery.validate.js', array('jquery'), false, true);
-    wp_enqueue_script( 'uploadfile', get_stylesheet_difectory_uri() . '/js/jquery.uploadfile.min.js', array('jquery'), false, true);
 	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), false, true );
 
     wp_localize_script( 'custom', 'ajax_object',
@@ -255,6 +255,7 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
         $pessoa = strip_tags(trim($_POST['pessoa']));
         $segmento = strip_tags(trim($_POST['segmento']));
         $nomeSeguimento = strip_tags(trim($_POST['nomeSeguimento']));
+        $nomeArquivo = strip_tags(trim($_POST['nomeArquivo']));
         $nomeEmpresa = strip_tags(trim($_POST['nomeEmpresa']));
         $estado = strip_tags(trim($_POST['estado']));
         $cidade = strip_tags(trim($_POST['cidade']));
@@ -345,13 +346,19 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             }
             $mail->addReplyTo($email, $nome);
             //$mail->addCC('cc@example.com');
-            $mail->addBCC('muniz@tobe.ppg.br');
-            $mail->addBCC('wisley@tobe.ppg.br');
+            //$mail->addBCC('muniz@tobe.ppg.br');
+            //$mail->addBCC('wisley@tobe.ppg.br');
 
             $mail->isHTML(true);                  // Set email format to HTML
 
             $mail->Subject = 'Contato Via Site Algar Seguranca';
-            $mail->Body    = '<h2>Dados Enviados:</h2><p>Nome: '.$nome.'</p><p>Email: '.$email.'</p><p>Telefone: '.$tel.'</p><p>Tipo Pessoa: '.$pessoa.'</p><p>Segmento de destino: '.$nomeSeguimento.'</p><p>Nome da Empresa: '.$nomeEmpresa.'</p><p>Estado: '.$estado.'</p><p>Cidade: '.$cidade.'</p><p>Mensagem: '.$mensagem.'</p>';
+            // Se tiver anexo
+            if($nomeArquivo) {
+                $html_anexo = '<p>Anexo: <a href="'. get_stylesheet_directory_uri() .'/uploads/'.$nomeArquivo.'">Baixar pelo link</a></p>';
+            } else {
+                $html_anexo = '';
+            }
+            $mail->Body    = '<h2>Dados Enviados:</h2><p>Nome: '.$nome.'</p><p>Email: '.$email.'</p><p>Telefone: '.$tel.'</p><p>Tipo Pessoa: '.$pessoa.'</p><p>Segmento de destino: '.$nomeSeguimento.'</p><p>Nome da Empresa: '.$nomeEmpresa.'</p><p>Estado: '.$estado.'</p><p>Cidade: '.$cidade.'</p><p>Mensagem: '.$mensagem.'</p>' . $html_anexo;
             $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             if(!$mail->send()) {

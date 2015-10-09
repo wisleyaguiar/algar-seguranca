@@ -55,9 +55,15 @@ jQuery( "#segmento" )
 	.change(function () {
 		var str = "";
 		jQuery( "#segmento option:selected" ).each(function() {
-			str = jQuery( this).text();
+			str = jQuery(this).text();
 		});
 		jQuery( "#nomeSeguimento").val(str);
+		var res = str.split(" ");
+		if(res[0]==='Orçamento'){
+			jQuery('#uploadfile').show();
+		} else {
+			jQuery('#uploadfile').hide();
+		}
 	})
 	.change();
 

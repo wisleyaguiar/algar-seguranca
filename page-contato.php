@@ -13,7 +13,7 @@ get_header(); ?>
         	<div class="contentTextos">
             	<?php the_content(); ?>
                 <div class="formContato" id="formContato">
-                	<form name="formContato" id="formContatoField" action="<?php echo home_url('/'); ?>" method="post">
+                	<form name="formContato" id="formContatoField" action="<?php echo home_url('/'); ?>" method="post" enctype="multipart/form-data">
                     	<div class="form-grupo">
                         	<label for="nome">*Nome</label>
                             <input type="text" name="nome" id="nome" class="form-campo">
@@ -46,14 +46,11 @@ get_header(); ?>
                             </select>
                             <input type="hidden" name="nomeSeguimento" id="nomeSeguimento" value="">
                         </div>
-                        <div class="form-group" id="uploadfile">
-                            <div id="fileuploader">Upload</div>
-                            <script>
-                                jQuery("#fileuploader").uploadFile({
-                                    url:"<?php echo get_stylesheet_directory_uri(); ?>/upload.php"
-                                });
-                            </script>
+                        <div class="form-grupo" id="uploadfile">
+                            <label for="fileuploader">Caso necessário, você pode anexar um arquivo à sua solicitação.</label><br>
+                            <div id="fileuploader">Enviar Arquivo</div>
                         </div>
+                        <input type="hidden" name="nomeArquivo" id="nomeArquivo" value="">
                         <div class="form-grupo">
                         	<label for="nomeEmpresa">*Nome da empresa</label>
                             <input type="text" name="nomeEmpresa" id="nomeEmpresa" class="form-campo">
@@ -129,4 +126,21 @@ get_header(); ?>
             <?php //get_template_part('popup','contato'); ?>
         </div>
     </section>
+    <script>
+        jQuery(document).ready(function() {
+            jQuery("#fileuploader").uploadFile({
+                url: "<?php echo get_stylesheet_directory_uri(); ?>/upload.php",
+                multiple: false,
+                dragDrop: false,
+                maxFileCount: 1,
+                onSuccess: function (files) {
+                    //files: list of files
+                    //data: response from server
+                    //xhr : jquer xhr object
+                    jQuery('#nomeArquivo').val(files[0]);
+                    jQuery("#uploadfile").html("Arquivo anexado com sucesso!");
+                }
+            });
+        });
+    </script>
 <?php get_footer(); ?>
