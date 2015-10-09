@@ -46,6 +46,14 @@ get_header(); ?>
                             </select>
                             <input type="hidden" name="nomeSeguimento" id="nomeSeguimento" value="">
                         </div>
+                        <div class="form-group" id="uploadfile">
+                            <div id="fileuploader">Upload</div>
+                            <script>
+                                jQuery("#fileuploader").uploadFile({
+                                    url:"<?php echo get_stylesheet_directory_uri(); ?>/upload.php"
+                                });
+                            </script>
+                        </div>
                         <div class="form-grupo">
                         	<label for="nomeEmpresa">*Nome da empresa</label>
                             <input type="text" name="nomeEmpresa" id="nomeEmpresa" class="form-campo">

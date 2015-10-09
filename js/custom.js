@@ -106,7 +106,8 @@ jQuery("#formContatoField").validate({
 				alert(data.msg);
 			} else {
 				jQuery("#enviar").html(data.msg);
-				dataLayer.push({'formContato': 'Enviado'});
+				alert('Seu contato foi enviado com sucesso!')
+				dataLayer.push({'event':'gtm.formSubmit','formContato': 'Enviado'});
 			}
 		});
 	}

@@ -8,6 +8,7 @@ function algarseguranca_enqueue_style() {
 	wp_enqueue_style( 'animate', get_stylesheet_directory_uri() . '/css/animate.css', false );
 	wp_enqueue_style( 'fractionslider', get_stylesheet_directory_uri() . '/css/fractionslider.css', false );
 	wp_enqueue_style( 'bxslider', get_stylesheet_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.css', false );
+    wp_enqueue_style( 'uploadfile', get_stylesheet_directory_uri() . '/css/uploadfile.css', false);
 	wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/style.css', false );
 }
 
@@ -17,6 +18,7 @@ function algarseguranca_enqueue_script() {
 	wp_enqueue_script( 'bxslider', get_stylesheet_directory_uri() . '/js/jquery.bxslider/jquery.bxslider.min.js', array('jquery'), false, true );
     wp_enqueue_script( 'mask', get_stylesheet_directory_uri() . '/js/jquery.mask.min.js', array('jquery'), false, true);
     wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/jquery.validate.js', array('jquery'), false, true);
+    wp_enqueue_script( 'uploadfile', get_stylesheet_difectory_uri() . '/js/jquery.uploadfile.min.js', array('jquery'), false, true);
 	wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/custom.js', array('jquery'), false, true );
 
     wp_localize_script( 'custom', 'ajax_object',
@@ -383,7 +385,7 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
                     )
                 );
 
-                $resp['msg'] = 'Enviado';
+                $resp['msg'] = 'Mensagem Enviada com sucesso!';
                 $resp['erro'] = false;
             }
         }
