@@ -1,5 +1,6 @@
+body {overflow: auto;}
 .header { background:#3b68a2; width:100%; position:fixed; height:80px; overflow:inherit; }
-.header .logo { padding-top:10px; text-align:center; padding-bottom:0; border-bottom:0; margin-right:0px; }
+.header .logo { padding-top:10px; text-align:center; padding-bottom:0; border-bottom:0; margin-right:0; }
 .header .logo img { width:140px; height:auto; }
 
 .maiMenu .menuMobile { display:block; background:url(../images/icone-abre-menu.png) no-repeat 0 0; width:29px; height:27px; overflow:hidden; text-indent:-99999px; }
@@ -7,7 +8,7 @@
 .contatoMobile { display:block; background:url(../images/icone-telefone-mobile.png) no-repeat 0 0; width:41px; height:39px; overflow:hidden; text-indent:-999999px; position:absolute; top:20px; right:10px; }
 
 .maiMenu { position:absolute; top:27px; left:25px; z-index:100000;}
-.linksMenu { display:none; background-color:rgba(53,93,145,0.95); border-radius:0px; overflow:auto; position:fixed; width:100%; height:100%; left:0; top:80px; z-index:10000000!important; }
+.linksMenu { display:none; background-color:rgba(53,93,145,0.95); border-radius:0; overflow:auto; position:fixed; width:100%; height:100%; left:0; top:80px; z-index:10000000!important; }
 .linksMenu li { display:block; height:70px; border-bottom:2px groove #6c8eb9; margin-right:2px; text-align:left; font-size:0.9em; overflow:hidden; }
 .linksMenu li:nth-last-child(1) {border-bottom:0; display:none; }
 .linksMenu li:nth-last-child(2) {border-bottom:0; }
@@ -73,7 +74,7 @@ p.no-mobile {display:none; }
 .caption-slide { width:auto; height:auto; color:#FFF; position:relative; left:0; top:0; padding:30px; }
 .caption-slide h2 { font-size:1.3em; font-weight:bold; margin-bottom:20px; }
 .mainContent .slider .slide .caption-slide p { display:none; }
-.mainContent .slider .slide .caption-slide a.link-slide {background-size: 10px;}
+.mainContent .slider .slide .caption-slide a.link-slide {background-size: 10px; font-size: 14px!important; padding-left: 20px;}
 
 /* Footer */
 .footer { width:100%; background-color:#3b68a2; margin:0; height:60px; position:relative; right:0; bottom:0; display:block; z-index:2;}
@@ -211,3 +212,10 @@ p.no-mobile {display:none; }
 .area-cliente { display:block; margin:0 -30px; }
 .area-cliente a { display:block; font-size:1.8em; font-weight:bold; text-decoration:none; color:#FFF; position:relative; padding-top:18px; height:42px; text-transform:uppercase; padding-left:0; padding-right:0; text-align:center; border-bottom:2px groove #679766; background:url(../images/cursor-lista-mobile-fechado.png) no-repeat 90% 50% #4f8c4d; }
 .area-cliente-desk { display:none; }
+
+.menuDesliza {display: block; position: fixed; height: 100%; z-index: 1; background: #355d91; width: 100%; overflow: auto;}
+.menuDesliza ul li {display: block; border-bottom: 2px groove #6786ad;}
+.menuDesliza ul li a {color:#FFF; font-size: 16px; text-decoration:none; display: block; padding:20px 15px;}
+.menuDesliza ul li ul {display: none; }
+.menuDesliza ul li ul li {border-bottom: 0; background: #dbc757;}
+.menuDesliza ul li ul li a {color:#355d91; padding-left:30px; padding-top: 10px; padding-bottom: 10px;}

@@ -17,7 +17,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 html, body { height:100%; }
 body { background:#5ca3e2 url(images/bg.png) no-repeat center right; font-family:'dax', sans-serif; font-size:90%; overflow:hidden; }
 body.internas { background:#FFF; overflow:auto; }
-.page { position:relative; width:100%; height:auto; min-height:100%; }
+.page { position:relative; width:100%; height:auto; min-height:100%; background:#5ca3e2 url(images/bg.png) no-repeat center right; overflow:hidden; z-index: 2; }
+.internas .page { position:relative; width:100%; height:auto; min-height:100%; background:#FFF; z-index: 2;}
 
 .header { background:url(images/bg-menu-lateral.png) repeat-y 0 0; width:253px; position:fixed; height:100%; overflow:hidden; z-index:10000; }
 .header .logo { padding-top:30px; text-align:center; padding-bottom:28px; border-bottom:2px groove #6c8eb9; margin-right:2px; }
@@ -213,3 +214,5 @@ div.area-cliente-desk { padding-bottom:40px; }
 
 label.error {color:red;}
 #uploadfile { display: none; }
+
+.menuDesliza {display: none;}

@@ -84,7 +84,9 @@ function register_my_menus() {
 	  'menu-service-rural' => __( 'Menu Serviços Rural' ),
 	  'menu-service-condominios' => __( 'Menu Serviços Condomínios' ),
 	  'menu-service-pmes' => __( 'Menu Serviços PME&acute;s' ),
-	  'menu-service-residencial' => __( 'Menu Serviços Residencial' )
+	  'menu-service-residencial' => __( 'Menu Serviços Residencial' ),
+      'mobile-menu-servicos' => __('Menu Mobile Serivços'),
+      'mobile-menu-institucional' => __('Menu Mobile Institucional')
     )
   );
 }

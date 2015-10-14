@@ -53,6 +53,26 @@ var ADAPT_CONFIG = {
         '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KCDZRN');</script>
 <!-- End Google Tag Manager -->
+<div class="menuDesliza">
+    <ul>
+        <li><a href="#" class="submenumobi">Institucional</a>
+            <ul>
+                <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu-institucional', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+            </ul>
+        </li>
+        <li><a href="https://www.elancers.net/frames/algar/frame_geral.asp">Trabalhe Conosco</a></li>
+        <li><a href="#" class="submenumobi">Serviços</a>
+            <ul>
+                <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu-servicos', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+            </ul>
+        </li>
+        <li><a href="#" class="submenumobi">Áreas de Atuação</a>
+            <ul>
+                <?php wp_nav_menu( array( 'theme_location' => 'header-menu-2', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
+            </ul>
+        </li>
+    </ul>
+</div>
 <div class="page">
 	<!-- Header menu Lateral -->
 	<header class="header">

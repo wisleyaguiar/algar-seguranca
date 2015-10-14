@@ -118,6 +118,11 @@ jQuery("#formContatoField").validate({
 		});
 	}
 });
+
+jQuery('.menuDesliza ul li a.submenumobi').click(function(e){
+    e.preventDefault();
+    jQuery(this).next().toggle('slow');
+});
 	
 // Responsive
 var ativado = false;
@@ -132,10 +137,14 @@ if (windowWidth <= 768) {
 		jQuery('.menuMobile').click(function(e){
 			if(jQuery(this).hasClass('ativado')) {
 				jQuery(this).removeClass('ativado');
-				jQuery('.linksMenu').fadeOut();	
+				//jQuery('.linksMenu').fadeOut();
+				jQuery('.page').animate({'left':0},500).css({'position':'relative'});
+                jQuery('body').css({'overflow':'auto'});
 			} else {
 				jQuery(this).addClass('ativado');
-				jQuery('.linksMenu').fadeIn();	
+				//jQuery('.linksMenu').fadeIn();
+				jQuery('.page').animate({'left':'77%'},500).css({'position':'fixed'});
+                jQuery('body').css({'overflow':'hidden'});
 			}
 		});
 		
@@ -172,10 +181,14 @@ if (win.width() <= 768) {
 		jQuery('.menuMobile').click(function(e){
 			if(jQuery(this).hasClass('ativado')) {
 				jQuery(this).removeClass('ativado');
-				jQuery('.linksMenu').fadeOut();	
+				//jQuery('.linksMenu').fadeOut();
+                jQuery('.page').animate({'left':0},500).css({'position':'relative'});
+                jQuery('body').css({'overflow':'auto'});
 			} else {
 				jQuery(this).addClass('ativado');
-				jQuery('.linksMenu').fadeIn();	
+				//jQuery('.linksMenu').fadeIn();
+                jQuery('.page').animate({'left':'77%'},500).css({'position':'fixed'});
+                jQuery('body').css({'overflow':'hidden'});
 			}
 		});
 		
