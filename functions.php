@@ -394,8 +394,24 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
                     )
                 );
 
-                $resp['msg'] = 'Mensagem Enviada com sucesso!';
-                $resp['erro'] = false;
+                // Enviando Mensagem de sucesso por email
+                $message = file_get_contents(get_stylesheet_directory_uri() . '/emails/msg_contato_website-b.html');
+                $message = str_replace('{%nome%}', $nome, $message);
+                $mail->AddAddress($email);
+                // Set the subject
+                $mail->Subject = 'Contato Site Algar Segurança';
+
+                //Set the message
+                $mail->MsgHTML($message);
+                $mail->AltBody = strip_tags($message);
+
+                if(!$mail->Send()) {
+                    $resp['msg'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+                    $resp['erro'] = true;
+                } else {
+                    $resp['msg'] = 'Mensagem Enviada com sucesso!';
+                    $resp['erro'] = false;
+                }
             }
         }
 

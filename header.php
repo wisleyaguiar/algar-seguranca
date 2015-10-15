@@ -60,7 +60,6 @@ var ADAPT_CONFIG = {
                 <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu-institucional', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
             </ul>
         </li>
-        <li><a href="https://www.elancers.net/frames/algar/frame_geral.asp">Trabalhe Conosco</a></li>
         <li><a href="#" class="submenumobi">Serviços</a>
             <ul>
                 <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu-servicos', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
@@ -71,6 +70,7 @@ var ADAPT_CONFIG = {
                 <?php wp_nav_menu( array( 'theme_location' => 'header-menu-2', 'container' => '', 'items_wrap' => '%3$s' ) ); ?>
             </ul>
         </li>
+        <li><a href="https://www.elancers.net/frames/algar/frame_geral.asp">Trabalhe Conosco</a></li>
     </ul>
 </div>
 <div class="page">

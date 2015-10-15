@@ -138,8 +138,10 @@ if (windowWidth <= 768) {
 			if(jQuery(this).hasClass('ativado')) {
 				jQuery(this).removeClass('ativado');
 				//jQuery('.linksMenu').fadeOut();
-				jQuery('.page').animate({'left':0},500).css({'position':'relative'});
-                jQuery('body').css({'overflow':'auto'});
+				jQuery('.page').animate({'left':0},500,function(){
+					jQuery(this).css({'position':'relative'});
+					jQuery('body').css({'overflow':'auto'});
+				});
 			} else {
 				jQuery(this).addClass('ativado');
 				//jQuery('.linksMenu').fadeIn();

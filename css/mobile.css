@@ -217,5 +217,5 @@ p.no-mobile {display:none; }
 .menuDesliza ul li {display: block; border-bottom: 2px groove #6786ad;}
 .menuDesliza ul li a {color:#FFF; font-size: 16px; text-decoration:none; display: block; padding:20px 15px;}
 .menuDesliza ul li ul {display: none; }
-.menuDesliza ul li ul li {border-bottom: 0; background: #dbc757;}
-.menuDesliza ul li ul li a {color:#355d91; padding-left:30px; padding-top: 10px; padding-bottom: 10px;}
+.menuDesliza ul li ul li {border-bottom: 0; background: #61abeb;}
+.menuDesliza ul li ul li a {color:#FFF; padding-left:30px; padding-top: 10px; padding-bottom: 10px;}
