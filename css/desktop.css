@@ -17,3 +17,5 @@
 #agentecuida .coluna-left { width:auto; left:inherit; }
 #agentecuida .coluna-right { width:auto; right:inherit; }
 #agentecuida .contentTextos { margin-left:43px; width:auto; max-width:none; margin-right:50px; }
+
+.linksMenu {display: block;}

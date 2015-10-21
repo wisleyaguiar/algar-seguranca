@@ -127,8 +127,8 @@ jQuery('.menuDesliza ul li a.submenumobi').click(function(e){
 // Responsive
 var ativado = false;
 var slider;
-var linksMenuGA = jQuery('.linksMenuGA').html();
-var linksMenu = jQuery('.linksMenu').html();
+//var linksMenuGA = jQuery('.linksMenuGA').html();
+//var linksMenu = jQuery('.linksMenu').html();
 
 var windowWidth = jQuery(window).width();
 if (windowWidth <= 768) {
@@ -170,7 +170,8 @@ if (windowWidth <= 768) {
 		ativado=true;
 		
 		// Menu no outro
-		jQuery(".linksMenu").append(linksMenuGA);
+		//jQuery(".linksMenu").append(linksMenuGA);
+		//jQuery(".linksMenu").hide();
 	}
 	jQuery(".menuResponsivoContent").show();
 }
@@ -184,8 +185,10 @@ if (win.width() <= 768) {
 			if(jQuery(this).hasClass('ativado')) {
 				jQuery(this).removeClass('ativado');
 				//jQuery('.linksMenu').fadeOut();
-                jQuery('.page').animate({'left':0},500).css({'position':'relative'});
-                jQuery('body').css({'overflow':'auto'});
+				jQuery('.page').animate({'left':0},500,function(){
+					jQuery(this).css({'position':'relative'});
+					jQuery('body').css({'overflow':'auto'});
+				});
 			} else {
 				jQuery(this).addClass('ativado');
 				//jQuery('.linksMenu').fadeIn();
@@ -214,7 +217,8 @@ if (win.width() <= 768) {
 		ativado=true;
 		
 		// Menu no outro
-		jQuery(".linksMenu").append(linksMenuGA);
+		//jQuery(".linksMenu").append(linksMenuGA);
+		//jQuery(".linksMenu").hide();
 	}
 	jQuery(".menuResponsivoContent").show();
 	
@@ -227,8 +231,11 @@ if (win.width() <= 768) {
 	} else {
 		jQuery(".menuResponsivoContent").show();
 	}
-	jQuery('.linksMenu').show();
-	jQuery('.linksMenu').html(linksMenu);
+	//jQuery('.linksMenu').show();
+	//jQuery('.linksMenu').html(linksMenu);
+	jQuery('.page').animate({'left':0},500).css({'position':'relative'});
+	jQuery('body').css({'overflow':'auto'});
+	jQuery('.menuMobile').removeClass('ativado');
 }
 
 });
