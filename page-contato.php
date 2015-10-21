@@ -10,8 +10,9 @@ get_header(); ?>
         <!-- Outros conteúdos -->
         <div class="mainContent">
         	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        	<div class="contentTextos">
+        	<div class="contentTextos" style="position: relative;">
             	<?php the_content(); ?>
+                <div style="position: absolute; top:0; right: 0;"><a role="button" class="btn btn-primary" href="https://grupoalgarcdt.elancers.net/frames/algar/frame_geral.asp" target="_blank">Vagas Abertas</a></div>
                 <div class="formContato" id="formContato">
                 	<form name="formContato" id="formContatoField" action="<?php echo home_url('/'); ?>" method="post" enctype="multipart/form-data">
                     	<div class="form-grupo">

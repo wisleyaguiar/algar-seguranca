@@ -216,3 +216,23 @@ label.error {color:red;}
 #uploadfile { display: none; }
 
 .menuDesliza {display: none;}
+
+a.btn.btn-primary {border-style: solid;
+	border-width: 0;
+	border-color: rgb(31, 27, 26);
+	border-radius: 5px;
+	background-color: #61abeb;
+	box-shadow: 0px 1px 0px 0px rgba(255, 255, 255, 0.004);
+	width: 185px;
+	height: 35px;
+	color: #FFF;
+	font-family: 'dax', sans-serif;
+	font-weight: bold;
+	font-size: 25px;
+	cursor: pointer;
+	display: block;
+	text-align: center;
+	padding-top: 10px;
+}
+
+a.btn.btn-primary:hover {text-decoration: none; /*text-shadow: 1px 1px 1px #000;*/}
