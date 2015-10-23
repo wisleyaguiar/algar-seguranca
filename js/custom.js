@@ -67,8 +67,17 @@ jQuery( "#segmento" )
 	})
 	.change();
 
+function validarUpload() {
+	if(jQuery("#nomeArquivo").val()===''){
+		jQuery('#uploadfile').hide();
+		return true;
+	}
+	return true;
+}
+
 // Formulário de Contato
 jQuery("#formContatoField").validate({
+	debug: true,
 	rules: {
 		nome: "required",
 		email: {
@@ -114,6 +123,7 @@ jQuery("#formContatoField").validate({
 				jQuery("#enviar").html(data.msg);
 				alert('Seu contato foi enviado com sucesso!')
 				dataLayer.push({'event':'gtm.formSubmit','formContato': 'Enviado'});
+				jQuery("#nome,#email,#tel,#nomeEmpresa,#cidade,#mensagem").val("");
 			}
 		});
 	}

@@ -348,7 +348,7 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             }
             $mail->addReplyTo($email, $nome);
             //$mail->addCC('cc@example.com');
-            $mail->addBCC('muniz@tobe.ppg.br');
+            //$mail->addBCC('muniz@tobe.ppg.br');
             $mail->addBCC('wisley@tobe.ppg.br');
 
             $mail->isHTML(true);                  // Set email format to HTML
@@ -395,18 +395,34 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
                 );
 
                 // Enviando Mensagem de sucesso por email
+                $mail2 = new PHPMailer;
+                $mail2->CharSet = 'UTF-8';
+
+                //$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+                $mail2->isSMTP();                                      // Set mailer to use SMTP
+                $mail2->Host = get_option('server_smtp');              // Specify main and backup SMTP servers
+                $mail2->SMTPAuth = true;                               // Enable SMTP authentication
+                $mail2->Username = get_option('user_smtp');            // SMTP username
+                $mail2->Password = get_option('pass_smtp');            // SMTP password
+                $mail2->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                $mail2->Port = 587;                                    // TCP port to connect to
+
+                $mail2->From = get_option('user_smtp');
+                $mail2->FromName = 'Contato Algar Segurança';
+
                 $message = file_get_contents(get_stylesheet_directory_uri() . '/emails/msg_contato_website-b.html');
                 $message = str_replace('{%nome%}', $nome, $message);
-                $mail->AddAddress($email);
+                $mail2->AddAddress($email);
                 // Set the subject
-                $mail->Subject = 'Contato Site Algar Segurança';
+                $mail2->Subject = 'Contato Site Algar Segurança';
 
                 //Set the message
-                $mail->MsgHTML($message);
-                $mail->AltBody = strip_tags($message);
+                $mail2->MsgHTML($message);
+                $mail2->AltBody = strip_tags($message);
 
-                if(!$mail->Send()) {
-                    $resp['msg'] = 'Message could not be sent. Mailer Error: ' . $mail->ErrorInfo;
+                if(!$mail2->Send()) {
+                    $resp['msg'] = 'Message could not be sent. Mailer Error: ' . $mail2->ErrorInfo;
                     $resp['erro'] = true;
                 } else {
                     $resp['msg'] = 'Mensagem Enviada com sucesso!';

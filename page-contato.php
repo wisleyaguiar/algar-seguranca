@@ -98,7 +98,7 @@ get_header(); ?>
                             <textarea name="mensagem" id="mensagem" class="form-textarea"></textarea>
                             <input type="hidden" name="action" value="my_action">
                         </div>
-                        <button type="submit" name="enviar" id="enviar">Enviar</button>
+                        <button type="submit" name="enviar" id="enviar" onclick="validarUpload()">Enviar</button>
                     </form>
                 </div>
                 
