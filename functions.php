@@ -349,7 +349,7 @@ add_action( 'wp_ajax_nopriv_my_action', 'enviarFormulario' );
             $mail->addReplyTo($email, $nome);
             //$mail->addCC('cc@example.com');
             //$mail->addBCC('muniz@tobe.ppg.br');
-            $mail->addBCC('wisley@tobe.ppg.br');
+            //$mail->addBCC('wisley@tobe.ppg.br');
 
             $mail->isHTML(true);                  // Set email format to HTML
 
